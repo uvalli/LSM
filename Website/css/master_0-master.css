@@ -1,0 +1,80 @@
+#u2513_align_to_page,#u2514
+{
+	position: relative;
+}
+
+#u2513,#u2519
+{
+	border-color: #000000;
+	background-color: #B8B8B8;
+	position: relative;
+}
+
+#u2517-6
+{
+	background-color: transparent;
+	line-height: 28px;
+	color: #4E4E4E;
+	font-size: 23px;
+	font-family: karla, sans-serif;
+	font-weight: 700;
+	position: relative;
+}
+
+#u2517-6:hover p
+{
+	color: #E4E4E4;
+	visibility: inherit;
+}
+
+#u2520-8
+{
+	text-align: center;
+	line-height: 16px;
+	color: #191919;
+	font-size: 13px;
+	position: relative;
+}
+
+#u2516-4
+{
+	background-color: transparent;
+	text-align: center;
+	color: #191919;
+	position: relative;
+}
+
+#u2516-4:hover p,#u2516-4:hover span,#u2516-4.MuseLinkActive p,#u2516-4.MuseLinkActive span
+{
+	text-decoration: none;
+}
+
+#u2518-4
+{
+	background-color: transparent;
+	text-align: center;
+	color: #191919;
+	position: relative;
+}
+
+#u2518-4:hover p,#u2518-4:hover span,#u2518-4.MuseLinkActive p,#u2518-4.MuseLinkActive span
+{
+	text-decoration: none;
+}
+
+#u2516,#u2518
+{
+	text-decoration: underline;
+}
+
+#u2515-4
+{
+	text-align: right;
+	color: #454545;
+	font-size: 13px;
+	line-height: 16px;
+	font-family: revalia, sans-serif;
+	font-weight: 400;
+	position: relative;
+}
+
