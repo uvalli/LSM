@@ -7,11 +7,12 @@
 {
 	z-index: 1;
 	width: 994px;
-	min-height: 701px;
+	min-height: 3363.574830590513px;
 	background-image: none;
 	border-style: none;
 	border-color: #000000;
 	background-color: #FFFFFF;
+	padding-bottom: 0px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -31,7 +32,7 @@
 
 #u2604
 {
-	z-index: 96;
+	z-index: 127;
 	width: 120px;
 	top: 187px;
 	left: 50%;
@@ -40,7 +41,7 @@
 
 #u2521
 {
-	z-index: 97;
+	z-index: 128;
 	width: 271px;
 	top: 458px;
 	left: 50%;
@@ -49,7 +50,7 @@
 
 #u2522
 {
-	z-index: 98;
+	z-index: 129;
 	width: 270px;
 	padding-bottom: 614px;
 	top: 0px;
@@ -59,7 +60,7 @@
 
 #u2590
 {
-	z-index: 99;
+	z-index: 130;
 	width: 270px;
 	padding-bottom: 614px;
 	top: 0px;
@@ -69,7 +70,7 @@
 
 #u2523
 {
-	z-index: 100;
+	z-index: 131;
 	width: 273px;
 	padding-bottom: 567px;
 	top: 47px;
@@ -79,7 +80,7 @@
 
 #u2524
 {
-	z-index: 101;
+	z-index: 132;
 	width: 271px;
 	height: 137px;
 	top: 477px;
@@ -89,7 +90,7 @@
 
 #u2525
 {
-	z-index: 102;
+	z-index: 133;
 	width: 259px;
 	top: 47px;
 	left: 50%;
@@ -104,7 +105,7 @@
 
 #u2526-8
 {
-	z-index: 103;
+	z-index: 134;
 	width: 259px;
 	min-height: 96px;
 	top: 47px;
@@ -114,7 +115,7 @@
 
 #menuu2528
 {
-	z-index: 122;
+	z-index: 153;
 	width: 241px;
 	top: 218px;
 	left: 50%;
@@ -241,7 +242,7 @@
 
 #u2527-11
 {
-	z-index: 111;
+	z-index: 142;
 	width: 251px;
 	min-height: 78px;
 	top: 506px;
@@ -251,14 +252,14 @@
 
 #u2591
 {
-	z-index: 165;
+	z-index: 196;
 	width: 271px;
 	margin-right: -10000px;
 }
 
 #u2593
 {
-	z-index: 166;
+	z-index: 197;
 	width: 271px;
 	padding-bottom: 6px;
 	margin-right: -10000px;
@@ -266,7 +267,7 @@
 
 #u2592-4
 {
-	z-index: 167;
+	z-index: 198;
 	width: 251px;
 	min-height: 19px;
 	margin-right: -10000px;
@@ -276,14 +277,14 @@
 
 #u2603
 {
-	z-index: 171;
+	z-index: 202;
 	width: 120px;
 	margin-right: -10000px;
 }
 
 #u2601
 {
-	z-index: 172;
+	z-index: 203;
 	width: 120px;
 	padding-bottom: 4px;
 	margin-right: -10000px;
@@ -301,7 +302,7 @@
 
 #u2602-4
 {
-	z-index: 173;
+	z-index: 204;
 	width: 96px;
 	margin-right: -10000px;
 	margin-top: 4px;
@@ -310,7 +311,18 @@
 
 #u2735
 {
-	z-index: 177;
+	z-index: 208;
+	width: 716px;
+	padding-bottom: 66px;
+	position: fixed;
+	top: 0px;
+	left: 50%;
+	margin-left: -224px;
+}
+
+#u2638
+{
+	z-index: 209;
 	width: 716px;
 	position: fixed;
 	top: 0px;
@@ -318,42 +330,21 @@
 	margin-left: -224px;
 }
 
-#u2734
-{
-	z-index: 178;
-	width: 716px;
-	border-color: #000000;
-	background-color: #FFFFFF;
-	padding-bottom: 103px;
-	position: relative;
-	margin-right: -10000px;
-}
-
-#u2638
-{
-	z-index: 179;
-	width: 716px;
-	position: fixed;
-	top: 51px;
-	left: 50%;
-	margin-left: -224px;
-}
-
 #u2637
 {
-	z-index: 180;
+	z-index: 210;
 	width: 716px;
 	border-style: none;
 	border-color: transparent;
 	background-color: #007C00;
-	padding-bottom: 52px;
+	padding-bottom: 66px;
 	position: relative;
 	margin-right: -10000px;
 }
 
 #u2615-4
 {
-	z-index: 181;
+	z-index: 211;
 	width: 607px;
 	min-height: 46px;
 	line-height: 36px;
@@ -362,19 +353,19 @@
 	font-family: cantarell, sans-serif;
 	font-weight: 700;
 	position: fixed;
-	top: 56px;
+	top: 19px;
 	left: 50%;
 	margin-left: -215px;
 }
 
 #u2643
 {
-	z-index: 35;
+	z-index: 38;
 	width: 716px;
 	border-color: #000000;
 	margin-left: 273px;
-	top: -511px;
-	margin-bottom: -511px;
+	top: -548px;
+	margin-bottom: -548px;
 	position: relative;
 	background: #FFFFFF url("../images/isfahan_lotfollah_mosque_ceiling_symmetric%20-%20copy.jpg") no-repeat center center;
 	background-size: cover !important;
@@ -382,30 +373,31 @@
 
 #u2605
 {
-	z-index: 36;
+	z-index: 39;
 	width: 716px;
-	height: 1314px;
+	height: 1362px;
 	border-color: #000000;
-	background-color: #545454;
-	background-color: rgba(0, 0, 0, 0.67);
+	background-color: #3F9C3F;
+	background-color: rgba(0, 124, 0, 0.75);
+	margin-bottom: -1px;
 	position: relative;
 	margin-right: -10000px;
-	-pie-background: rgba(0, 0, 0, 0.67);
+	-pie-background: rgba(0, 124, 0, 0.75);
 }
 
 #pu2722-8
 {
 	width: 0.01px;
-	padding-bottom: 518px;
+	padding-bottom: 942px;
 	margin-left: 302px;
-	top: -1061px;
-	margin-bottom: -518px;
+	top: -1071px;
+	margin-bottom: -943px;
 	position: relative;
 }
 
 #u2722-8
 {
-	z-index: 76;
+	z-index: 83;
 	width: 658px;
 	min-height: 124px;
 	text-align: center;
@@ -419,8 +411,8 @@
 
 #u2722-2
 {
-	font-size: 23px;
-	line-height: 28px;
+	font-size: 26px;
+	line-height: 31px;
 }
 
 #u2722-3,#u2722-4,#u2722-6
@@ -431,19 +423,19 @@
 
 #u2639
 {
-	z-index: 66;
+	z-index: 73;
 	width: 575px;
 	position: fixed;
-	top: 739px;
+	top: 951px;
 	left: 343px;
 }
 
 #u2641
 {
-	z-index: 71;
+	z-index: 78;
 	width: 111px;
 	border-color: #000000;
-	background-color: #007C00;
+	background-color: #FFFFFF;
 	-moz-border-radius: 90px;
 	-webkit-border-radius: 90px;
 	-khtml-border-radius: 90px;
@@ -455,14 +447,14 @@
 
 #u2640-4
 {
-	z-index: 72;
+	z-index: 79;
 	width: 94px;
 	min-height: 37px;
 	text-align: center;
 	letter-spacing: 4px;
-	color: #FFFFFF;
-	font-size: 23px;
-	line-height: 28px;
+	font-size: 28px;
+	line-height: 34px;
+	color: #007C00;
 	font-family: karla, sans-serif;
 	font-weight: 700;
 	position: relative;
@@ -473,7 +465,65 @@
 
 #u2642-4
 {
-	z-index: 67;
+	z-index: 74;
+	width: 449px;
+	min-height: 51px;
+	line-height: 28px;
+	color: #FFFFFF;
+	font-size: 23px;
+	font-family: cantarell, sans-serif;
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 17px;
+	left: 126px;
+}
+
+#u2747
+{
+	z-index: 107;
+	width: 575px;
+	position: fixed;
+	top: 1163px;
+	left: 343px;
+}
+
+#u2750
+{
+	z-index: 112;
+	width: 111px;
+	border-color: #000000;
+	background-color: #FFFFFF;
+	-moz-border-radius: 90px;
+	-webkit-border-radius: 90px;
+	-khtml-border-radius: 90px;
+	border-radius: 90px;
+	padding-bottom: 31px;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u2749-4
+{
+	z-index: 113;
+	width: 94px;
+	min-height: 37px;
+	text-align: center;
+	letter-spacing: 4px;
+	font-size: 23px;
+	line-height: 28px;
+	color: #007C00;
+	font-family: karla, sans-serif;
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 31px;
+	left: 8px;
+}
+
+#u2748-4
+{
+	z-index: 108;
 	width: 449px;
 	min-height: 51px;
 	line-height: 28px;
@@ -489,19 +539,19 @@
 
 #u2619
 {
-	z-index: 56;
+	z-index: 63;
 	width: 570px;
 	position: fixed;
-	top: 526px;
+	top: 531px;
 	left: 348px;
 }
 
 #u2617
 {
-	z-index: 61;
+	z-index: 68;
 	width: 111px;
 	border-color: #000000;
-	background-color: #007C00;
+	background-color: #FFFFFF;
 	-moz-border-radius: 90px;
 	-webkit-border-radius: 90px;
 	-khtml-border-radius: 90px;
@@ -513,14 +563,79 @@
 
 #u2618-4
 {
-	z-index: 62;
+	z-index: 69;
+	width: 87px;
+	min-height: 37px;
+	text-align: center;
+	letter-spacing: 4px;
+	font-size: 29px;
+	line-height: 35px;
+	color: #007C00;
+	font-family: karla, sans-serif;
+	font-weight: 700;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 31px;
+	left: 12px;
+}
+
+#u999-4
+{
+	z-index: 64;
+	width: 449px;
+	min-height: 36px;
+	line-height: 28px;
+	color: #FFFFFF;
+	font-size: 23px;
+	font-family: cantarell, sans-serif;
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 32px;
+	left: 121px;
+}
+
+#u999-2
+{
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+#u2751
+{
+	z-index: 117;
+	width: 570px;
+	position: fixed;
+	top: 732px;
+	left: 348px;
+}
+
+#u2754
+{
+	z-index: 122;
+	width: 111px;
+	border-color: #000000;
+	background-color: #FFFFFF;
+	-moz-border-radius: 90px;
+	-webkit-border-radius: 90px;
+	-khtml-border-radius: 90px;
+	border-radius: 90px;
+	padding-bottom: 31px;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u2752-4
+{
+	z-index: 123;
 	width: 79px;
 	min-height: 37px;
 	text-align: center;
 	letter-spacing: 4px;
-	color: #FFFFFF;
 	font-size: 29px;
 	line-height: 35px;
+	color: #007C00;
 	font-family: karla, sans-serif;
 	font-weight: 700;
 	position: relative;
@@ -529,9 +644,9 @@
 	left: 16px;
 }
 
-#u999-4
+#u2753-4
 {
-	z-index: 57;
+	z-index: 118;
 	width: 449px;
 	min-height: 51px;
 	line-height: 28px;
@@ -545,18 +660,18 @@
 	left: 121px;
 }
 
-#u2615-2,#u2642-2,#u999-2
+#u2615-2,#u2642-2,#u2748-2,#u2753-2
 {
 	padding: 5px;
 }
 
 #u2644
 {
-	z-index: 33;
+	z-index: 36;
 	width: 716px;
-	height: 627px;
+	height: 579px;
 	border-color: #000000;
-	background-color: #057C05;
+	background-color: #FFFFFF;
 	margin-left: 273px;
 	position: relative;
 }
@@ -564,22 +679,22 @@
 #pu2613-12
 {
 	width: 0.01px;
-	padding-bottom: 327px;
+	padding-bottom: 349px;
 	margin-left: 294px;
-	top: -454px;
-	margin-bottom: -327px;
+	top: -466px;
+	margin-bottom: -349px;
 	position: relative;
 }
 
 #u2613-12
 {
-	z-index: 38;
+	z-index: 41;
 	width: 379px;
-	min-height: 322px;
-	color: #FFFFFF;
+	min-height: 349px;
+	color: #000000;
 	font-weight: 400;
 	position: fixed;
-	top: 1554px;
+	top: 1503px;
 	left: 294px;
 }
 
@@ -611,18 +726,18 @@
 
 #u2715
 {
-	z-index: 34;
+	z-index: 37;
 	width: 271px;
 	height: 327px;
 	border-color: #000000;
 	position: fixed;
-	top: 1554px;
+	top: 1516px;
 	left: 705px;
 	background: #FFFFFF url("../images/mosque-small1-u2715-fr.jpg") no-repeat center bottom;
 	background-size: cover !important;
 }
 
-.js #u2715.pre_init
+.js #u2613-12.pre_init,.js #u2715.pre_init
 {
 	opacity: 0;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -631,7 +746,7 @@
 
 #u2645
 {
-	z-index: 31;
+	z-index: 34;
 	width: 716px;
 	border-color: #000000;
 	margin-left: 273px;
@@ -642,7 +757,7 @@
 
 #u2729
 {
-	z-index: 32;
+	z-index: 35;
 	width: 716px;
 	height: 514px;
 	border-color: #000000;
@@ -656,22 +771,15 @@
 	-pie-background: rgba(0, 0, 0, 0.75);
 }
 
-.js #u2729.pre_init
+#u2614-10
 {
-	opacity: 0.1;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
-	filter: alpha(opacity=10);
-}
-
-#u2614-6
-{
-	z-index: 50;
-	width: 685px;
+	z-index: 53;
+	width: 673px;
 	color: #FFFFFF;
 	font-family: cantarell, sans-serif;
 	position: fixed;
-	top: 2226px;
-	left: 309px;
+	top: 2190px;
+	left: 308px;
 }
 
 #u2614-2
@@ -682,29 +790,61 @@
 	padding: 5px;
 }
 
-#u2614-4
+#u2614-4,#u2614-6,#u2614-8
 {
 	font-size: 16px;
 	line-height: 19px;
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 5px;
 	font-weight: 400;
-	padding: 5px;
 }
 
-#u2731
+#ppu2746
 {
-	z-index: 84;
-	width: 716px;
-	border-color: #000000;
-	background-color: #662D91;
-	padding-bottom: 153px;
+	width: 0.01px;
 	margin-left: 273px;
 	position: relative;
 }
 
-#u2733-11
+#pu2746
 {
-	z-index: 85;
-	width: 680px;
+	z-index: 33;
+	width: 0.01px;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u2746
+{
+	z-index: 0;
+	width: 716px;
+	border-color: #000000;
+	background-color: #3F3F3F;
+	background-color: rgba(0, 0, 0, 0.75);
+	opacity: 0.35;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+	filter: alpha(opacity=35);
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	-pie-background: rgba(0, 0, 0, 0.75);
+}
+
+#pu2733-16
+{
+	width: 0.01px;
+	position: relative;
+	left: 35px;
+	padding-top: 169px;
+	z-index: 2;
+	padding-bottom: 105px;
+}
+
+#u2733-16
+{
+	z-index: 91;
+	width: 662px;
 	min-height: 168px;
 	line-height: 25px;
 	color: #FFFFFF;
@@ -713,8 +853,6 @@
 	font-weight: 700;
 	position: relative;
 	margin-right: -10000px;
-	margin-top: 137px;
-	left: 36px;
 }
 
 #u2733-2
@@ -722,16 +860,50 @@
 	padding-bottom: 5px;
 }
 
-#u2733-4,#u2733-6,#u2733-8
+#u2733-4,#u2733-6,#u2733-8,#u2733-10,#u2733-12,#u2733-14
 {
 	line-height: 0px;/* 0 for mixed font sized paras; applied on spans instead */
 }
 
-#u2733-3,#u2733-5,#u2733-7
+#u2733-3,#u2733-5,#u2733-7,#u2733-9,#u2733-11,#u2733-13
 {
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 22px;
+}
+
+#u2731
+{
+	z-index: 31;
+	width: 716px;
+	border-color: #000000;
+	position: relative;
+	margin-right: -10000px;
+	background: #662D91 url("../images/isfahan_lotfollah_mosque_ceiling_symmetric.jpg") no-repeat center center;
+	background-size: cover !important;
+}
+
+#u2745
+{
+	z-index: 32;
+	width: 716px;
+	height: 458px;
+	border-color: #000000;
+	background-color: #F1A554;
+	background-color: rgba(237, 135, 28, 0.75);
+	opacity: 0.55;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=55.00000000000001)";
+	filter: alpha(opacity=55.00000000000001);
+	position: relative;
+	margin-right: -10000px;
+	-pie-background: rgba(237, 135, 28, 0.75);
+}
+
+.js #u2729.pre_init,.js #u2746.pre_init,.js #u2745.pre_init
+{
+	opacity: 0.1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+	filter: alpha(opacity=10);
 }
 
 .js #u2731.pre_init
@@ -743,13 +915,14 @@
 
 #u1074
 {
-	z-index: 37;
+	z-index: 40;
 	width: 715px;
 	min-height: 501px;
 	border-color: #E9E6DF;
 	background-color: #EAEAEA;
 	text-align: center;
 	margin-left: 274px;
+	margin-top: 1px;
 	position: relative;
 }
 
@@ -759,7 +932,7 @@
 	width: 1194px;
 	padding-bottom: 7px;
 	left: -100px;
-	margin-top: 135px;
+	top: -1px;
 }
 
 #u2513_align_to_page
@@ -768,6 +941,7 @@
 	margin-right: auto;
 	width: 994px;
 	left: -100px;
+	margin-bottom: -1px;
 }
 
 #u2514

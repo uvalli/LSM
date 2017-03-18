@@ -2,13 +2,13 @@
   <folder name="phone">
     <folder name="css">
       <file name="index.css" crc="325548934" ref="phone>index"/>
-      <file name="master_a-master.css" crc="244255205" ref="phone>madrassa:phone>services:phone>prayer-times:phone>news:phone>about-us:phone>index:phone>listen-live"/>
+      <file name="master_a-master.css" crc="3848384969" ref="phone>madrassa:phone>services:phone>prayer-times:phone>news:phone>about-us:phone>index:phone>listen-live"/>
       <file name="master_c-master.css" crc="3998276939" ref="phone>madrassa:phone>services:phone>prayer-times:phone>news:phone>about-us:phone>listen-live"/>
       <file name="madrassa.css" crc="445887069" ref="phone>madrassa"/>
       <file name="iefonts_madrassa.css" crc="4008994436" ref="phone>madrassa"/>
       <file name="services.css" crc="3874526904" ref="phone>services"/>
       <file name="iefonts_services.css" crc="480407407" ref="phone>services"/>
-      <file name="prayer-times.css" crc="4151946974" ref="phone>prayer-times"/>
+      <file name="prayer-times.css" crc="3796100807" ref="phone>prayer-times"/>
       <file name="iefonts_prayer-times.css" crc="78517904" ref="phone>prayer-times"/>
       <file name="news.css" crc="3856263633" ref="phone>news"/>
       <file name="iefonts_news.css" crc="4037751608" ref="phone>news"/>
@@ -18,46 +18,46 @@
       <file name="listen-live.css" crc="115317194" ref="phone>listen-live"/>
       <file name="iefonts_listen-live.css" crc="4069515086" ref="phone>listen-live"/>
     </folder>
-    <file name="index.html" crc="4052871273" mt="1489767649555" redirect="true"/>
-    <file name="about-us.html" crc="3758583915" mt="1489767649727" redirect="true"/>
-    <file name="news.html" crc="374515240" mt="1489767649739" redirect="true"/>
-    <file name="prayer-times.html" crc="3888322416" mt="1489767649751" redirect="true"/>
-    <file name="services.html" crc="4171788603" mt="1489767649759" redirect="true"/>
-    <file name="madrassa.html" crc="165066311" mt="1489767649775" redirect="true"/>
-    <file name="listen-live.html" crc="47682388" mt="1489767649791" redirect="true"/>
+    <file name="index.html" crc="4186885165" mt="1489874077973" redirect="true"/>
+    <file name="about-us.html" crc="3758583915" mt="1489874078270" redirect="true"/>
+    <file name="news.html" crc="374515240" mt="1489874078270" redirect="true"/>
+    <file name="prayer-times.html" crc="3888322416" mt="1489874078270" redirect="true"/>
+    <file name="services.html" crc="4171788603" mt="1489874078286" redirect="true"/>
+    <file name="madrassa.html" crc="165066311" mt="1489874078286" redirect="true"/>
+    <file name="listen-live.html" crc="47682388" mt="1489874078286" redirect="true"/>
   </folder>
   <folder name="css">
     <file name="site_global.css" crc="417434784"/>
-    <file name="index.css" crc="4154167315" ref="index"/>
-    <file name="master_a-master.css" crc="3944041689" ref="index"/>
-    <file name="master_b-master.css" crc="95215325" ref="news:nikkah:contact-us:policies:sitemap:prayer-times:madrassa:about-us:listen-live:services:school-visits:islamic-programmes:key-contacts"/>
-    <file name="news.css" crc="3931540774" ref="news"/>
+    <file name="index.css" crc="4099210357" ref="index"/>
+    <file name="master_a-master.css" crc="457422787" ref="index"/>
+    <file name="master_b-master.css" crc="10579670" ref="news:nikkah:contact-us:policies:sitemap:prayer-times:madrassa:about-us:listen-live:services:school-visits:islamic-programmes:key-contacts"/>
+    <file name="news.css" crc="198882931" ref="news"/>
     <file name="iefonts_news.css" crc="4156623705" ref="news"/>
-    <file name="nikkah.css" crc="3771818355" ref="nikkah"/>
+    <file name="nikkah.css" crc="4274006237" ref="nikkah"/>
     <file name="iefonts_nikkah.css" crc="475155805" ref="nikkah"/>
-    <file name="contact-us.css" crc="1071663" ref="contact-us"/>
+    <file name="contact-us.css" crc="246663243" ref="contact-us"/>
     <file name="iefonts_contact-us.css" crc="3891891955" ref="contact-us"/>
-    <file name="policies.css" crc="311522005" ref="policies"/>
+    <file name="policies.css" crc="4123506540" ref="policies"/>
     <file name="iefonts_policies.css" crc="4156623705" ref="policies"/>
-    <file name="sitemap.css" crc="229022993" ref="sitemap"/>
+    <file name="sitemap.css" crc="109738309" ref="sitemap"/>
     <file name="iefonts_sitemap.css" crc="4156623705" ref="sitemap"/>
-    <file name="prayer-times.css" crc="177049167" ref="prayer-times"/>
+    <file name="prayer-times.css" crc="3841512725" ref="prayer-times"/>
     <file name="iefonts_prayer-times.css" crc="4156623705" ref="prayer-times"/>
     <file name="iefonts_index.css" crc="4085580115" ref="index"/>
-    <file name="madrassa.css" crc="536511451" ref="madrassa"/>
+    <file name="madrassa.css" crc="270958325" ref="madrassa"/>
     <file name="iefonts_madrassa.css" crc="4098371102" ref="madrassa"/>
-    <file name="about-us.css" crc="373872954" ref="about-us"/>
-    <file name="iefonts_about-us.css" crc="352957342" ref="about-us"/>
-    <file name="listen-live.css" crc="4092059531" ref="listen-live"/>
+    <file name="about-us.css" crc="4717634" ref="about-us"/>
+    <file name="iefonts_about-us.css" crc="89886330" ref="about-us"/>
+    <file name="listen-live.css" crc="3792014104" ref="listen-live"/>
     <file name="iefonts_listen-live.css" crc="3914895290" ref="listen-live"/>
-    <file name="services.css" crc="3921414123" ref="services"/>
+    <file name="services.css" crc="4072375194" ref="services"/>
     <file name="iefonts_services.css" crc="114793251" ref="services"/>
-    <file name="school-visits.css" crc="4102428618" ref="school-visits"/>
+    <file name="school-visits.css" crc="3854120707" ref="school-visits"/>
     <file name="iefonts_school-visits.css" crc="4061882823" ref="school-visits"/>
-    <file name="islamic-programmes.css" crc="4020813670" ref="islamic-programmes"/>
+    <file name="islamic-programmes.css" crc="3937130052" ref="islamic-programmes"/>
     <file name="iefonts_islamic-programmes.css" crc="3848157549" ref="islamic-programmes"/>
     <file name="master_0-master.css" crc="4196564394" ref="about-us:nikkah:school-visits:index:contact-us:islamic-programmes:services:listen-live:prayer-times:key-contacts:policies:madrassa:news:sitemap"/>
-    <file name="key-contacts.css" crc="271140848" ref="key-contacts"/>
+    <file name="key-contacts.css" crc="4143711439" ref="key-contacts"/>
     <file name="iefonts_key-contacts.css" crc="4239879228" ref="key-contacts"/>
   </folder>
   <folder name="scripts">
@@ -108,19 +108,20 @@
     <file name="isfahan_lotfollah_mosque_ceiling_symmetric - copy.jpg" crc="3764645595" ref="about-us"/>
     <file name="mosque-small1-u2715-fr.jpg" crc="532939553" ref="about-us"/>
     <file name="background-2018835_1920.jpg" crc="4134676587" ref="about-us"/>
+    <file name="isfahan_lotfollah_mosque_ceiling_symmetric.jpg" crc="3764645595" ref="about-us"/>
   </folder>
-  <file name="index.html" crc="3826904225" mt="1489837529032" redirect="true"/>
-  <file name="services.html" crc="55813448" mt="1489837529048" redirect="true"/>
-  <file name="prayer-times.html" crc="4031108940" mt="1489837529063" redirect="true"/>
-  <file name="policies.html" crc="4293368594" mt="1489837529063" redirect="true"/>
-  <file name="madrassa.html" crc="255716318" mt="1489837529063" redirect="true"/>
-  <file name="news.html" crc="8531232" mt="1489837529079" redirect="true"/>
-  <file name="sitemap.html" crc="205401360" mt="1489837529079" redirect="true"/>
-  <file name="about-us.html" crc="315316619" mt="1489837529079" redirect="true"/>
-  <file name="contact-us.html" crc="152317696" mt="1489837529095" redirect="true"/>
-  <file name="school-visits.html" crc="3783935681" mt="1489837529095" redirect="true"/>
-  <file name="nikkah.html" crc="4023380524" mt="1489837529095" redirect="true"/>
-  <file name="islamic-programmes.html" crc="392347421" mt="1489837529110" redirect="true"/>
-  <file name="listen-live.html" crc="165429937" mt="1489837529110" redirect="true"/>
-  <file name="key-contacts.html" crc="4054806829" mt="1489837529126" redirect="true"/>
+  <file name="index.html" crc="4091483452" mt="1489874078301" redirect="true"/>
+  <file name="services.html" crc="4123435162" mt="1489874078317" redirect="true"/>
+  <file name="prayer-times.html" crc="3891836868" mt="1489874078333" redirect="true"/>
+  <file name="policies.html" crc="3996336393" mt="1489874078333" redirect="true"/>
+  <file name="madrassa.html" crc="79798847" mt="1489874078333" redirect="true"/>
+  <file name="news.html" crc="159219006" mt="1489874078348" redirect="true"/>
+  <file name="sitemap.html" crc="3893319833" mt="1489874078348" redirect="true"/>
+  <file name="about-us.html" crc="4197868993" mt="1489876411955" redirect="true"/>
+  <file name="contact-us.html" crc="447701043" mt="1489874078364" redirect="true"/>
+  <file name="school-visits.html" crc="340440139" mt="1489874078364" redirect="true"/>
+  <file name="nikkah.html" crc="4001086025" mt="1489874078379" redirect="true"/>
+  <file name="islamic-programmes.html" crc="3914176560" mt="1489874078379" redirect="true"/>
+  <file name="listen-live.html" crc="29820857" mt="1489874078379" redirect="true"/>
+  <file name="key-contacts.html" crc="119109906" mt="1489874078395" redirect="true"/>
 </manifest>
