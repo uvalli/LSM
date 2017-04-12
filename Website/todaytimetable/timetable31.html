@@ -39,7 +39,7 @@ var visualization;
 
 function drawVisualization() {
     var query = new google.visualization.Query('https://spreadsheets.google.com/tq?key=1Zx8nlmg0CwF1o2EzMJknJuxUU8Wk57LAfJ-rZnDsX4k&output=html&gid=300448638&usp=sharing');
-    query.setQuery('SELECT Q,R,S,T,U,V,W,X,Y,Z,AA,AB');
+    query.setQuery('SELECT Q,R,S,T,U,V,W,X,Y,Z,AA,AB where R contains ":"');
     query.send(handleQueryResponse);
 }
 
