@@ -350,10 +350,10 @@
 	width: 658px;
 	min-height: 28px;
 	text-align: left;
-	letter-spacing: 4px;
 	font-size: 28px;
-	line-height: 34px;
+	letter-spacing: 4px;
 	color: #FFFFFF;
+	line-height: 34px;
 	font-weight: bold;
 	position: relative;
 	margin-right: -10000px;
@@ -539,8 +539,8 @@
 	width: 248px;
 	min-height: 33px;
 	text-align: center;
-	color: #313131;
 	font-size: 18px;
+	color: #313131;
 	line-height: 22px;
 	font-family: cantarell, sans-serif;
 	font-weight: 700;
@@ -649,8 +649,8 @@
 	width: 256px;
 	min-height: 20px;
 	text-align: center;
-	color: #000000;
 	font-size: 17px;
+	color: #000000;
 	line-height: 20px;
 	font-family: karla, sans-serif;
 	font-weight: 400;
@@ -779,8 +779,8 @@
 	width: 256px;
 	min-height: 20px;
 	text-align: center;
-	color: #000000;
 	font-size: 17px;
+	color: #000000;
 	line-height: 20px;
 	font-family: karla, sans-serif;
 	font-weight: 400;

@@ -32,7 +32,7 @@
 {
 	z-index: 1;
 	width: 380px;
-	min-height: 562.3179077083057px;
+	min-height: 562.3679077083054px;
 	background-image: none;
 	border-style: none;
 	border-color: #000000;
@@ -43,7 +43,7 @@
 #page_position_content
 {
 	margin-top: -9px;
-	margin-bottom: -160px;
+	margin-bottom: -161px;
 }
 
 #u1345-6
@@ -581,14 +581,15 @@
 #u2779
 {
 	z-index: 63;
-	width: 342px;
-	min-height: 508px;
+	width: 370px;
+	min-height: 635px;
 	border-style: none;
 	border-color: transparent;
 	background-color: transparent;
-	margin-left: 27px;
-	top: -279px;
-	margin-bottom: -279px;
+	text-align: center;
+	margin-left: 7px;
+	top: -280px;
+	margin-bottom: -280px;
 	position: relative;
 }
 
@@ -752,7 +753,7 @@
 	width: 221px;
 	min-height: 19px;
 	margin-left: 155px;
-	margin-top: 3px;
+	margin-top: 4px;
 }
 
 body

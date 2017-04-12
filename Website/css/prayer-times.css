@@ -349,10 +349,10 @@
 	width: 658px;
 	min-height: 28px;
 	text-align: left;
-	letter-spacing: 3px;
 	font-size: 28px;
-	line-height: 34px;
+	letter-spacing: 3px;
 	color: #FFFFFF;
+	line-height: 34px;
 	font-weight: bold;
 	position: relative;
 	margin-right: -10000px;
@@ -449,10 +449,10 @@
 	-khtml-border-radius: 0px 10px 10px 0px ;
 	border-radius: 0px 10px 10px 0px ;
 	text-align: center;
-	letter-spacing: 3px;
 	font-size: 20px;
-	line-height: 24px;
+	letter-spacing: 3px;
 	color: #FFFFFF;
+	line-height: 24px;
 	font-weight: normal;
 	position: relative;
 	margin-right: -10000px;
@@ -539,8 +539,8 @@
 	background-color: transparent;
 	text-align: center;
 	line-height: 24px;
-	color: #FFFFFF;
 	font-size: 20px;
+	color: #FFFFFF;
 	font-family: Geneva, Verdana, Lucida Sans, Lucida Sans Unicode, sans-serif;
 }
 
@@ -642,10 +642,10 @@
 	-khtml-border-radius: 0px 10px 10px 0px ;
 	border-radius: 0px 10px 10px 0px ;
 	text-align: right;
-	letter-spacing: 3px;
 	font-size: 28px;
-	line-height: 34px;
+	letter-spacing: 3px;
 	color: #FFFFFF;
+	line-height: 34px;
 	font-weight: bold;
 	position: relative;
 	margin-right: -10000px;

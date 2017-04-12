@@ -60,8 +60,8 @@
 #u2575-4
 {
 	text-align: center;
-	color: #FFFFFF;
 	font-size: 17px;
+	color: #FFFFFF;
 	line-height: 20px;
 	font-family: Geneva, Verdana, Lucida Sans, Lucida Sans Unicode, sans-serif;
 	font-weight: normal;
@@ -161,10 +161,10 @@
 #u2592-4
 {
 	text-align: center;
-	letter-spacing: 3px;
 	font-size: 15px;
-	line-height: 18px;
+	letter-spacing: 3px;
 	color: #FFFFFF;
+	line-height: 18px;
 	font-weight: bold;
 	position: relative;
 }
@@ -195,8 +195,8 @@
 {
 	text-align: center;
 	line-height: 20px;
-	color: #FFFFFF;
 	font-size: 17px;
+	color: #FFFFFF;
 	font-family: Geneva, Verdana, Lucida Sans, Lucida Sans Unicode, sans-serif;
 	position: relative;
 }
