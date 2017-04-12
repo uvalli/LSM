@@ -16,9 +16,9 @@
   <link rel="stylesheet" type="text/css" href="css/site_global.css?417434784"/>
   <link rel="stylesheet" type="text/css" href="css/master_0-master.css?3948801625"/>
   <link rel="stylesheet" type="text/css" href="css/master_a-master.css?528273559"/>
-  <link rel="stylesheet" type="text/css" href="css/index.css?4136709566" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="css/index.css?120359559" id="pagesheet"/>
   <!--[if lt IE 9]>
-  <link rel="stylesheet" type="text/css" href="css/iefonts_index.css?266813814"/>
+  <link rel="stylesheet" type="text/css" href="css/iefonts_index.css?4078130655"/>
   <![endif]-->
   <!-- Other scripts -->
   <script type="text/javascript">
@@ -27,21 +27,13 @@ var __adobewebfontsappname__ = "muse";
 </script>
   <!-- JS includes -->
   <script type="text/javascript">
-   document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/cantarell:n4:all;revalia:n4:all;karla:n7,n4:all.js" type="text/javascript">\x3C/script>');
+   document.write('\x3Cscript src="' + (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//webfonts.creativecloud.com/quantico:n4:all;cantarell:n4:all;revalia:n4:all;karla:n7,n4:all.js" type="text/javascript">\x3C/script>');
 </script>
    </head>
  <body>
 
   <div class="clearfix" id="page"><!-- column -->
    <div class="position_content" id="page_position_content">
-    <div class="clearfix colelem" id="u2786"><!-- group -->
-     <div class="museBGSize clearfix grpelem" id="u72"><!-- group -->
-      <div class="grpelem" id="u2784"><!-- custom html -->
-       <iframe src="https://uvalli.github.io/LSM/Website/todaytimetable/timetableheader.html" frameborder="0" width="100%" ></iframe>
-
-</div>
-     </div>
-    </div>
     <div class="clearfix pinned-colelem" id="u885"><!-- group -->
      <div class="clearfix" id="u618"><!-- group -->
       <div class="clearfix" id="u512"><!-- group -->
@@ -91,6 +83,32 @@ var __adobewebfontsappname__ = "muse";
         <p>Radio Frequency 454.275</p>
        </div>
       </div>
+     </div>
+    </div>
+    <div class="museBGSize clearfix colelem" id="u72"><!-- group -->
+     <div class="clearfix grpelem" id="u2832"><!-- group -->
+      <ul class="AccordionWidget clearfix grpelem" id="accordionu2794"><!-- vertical box -->
+       <li class="AccordionPanel clearfix colelem" id="u2814"><!-- vertical box -->
+        <div class="AccordionPanelTab clearfix colelem" id="u2815-4"><!-- content -->
+         <p id="u2815-2">click here to expand timetable</p>
+        </div>
+        <div class="AccordionPanelContent disn rgba-background clearfix colelem" id="u2816"><!-- column -->
+         <div class="clearfix colelem" id="u2837"><!-- group -->
+          <div class="pointer_cursor clearfix grpelem" id="u2835"><!-- group -->
+           <a class="block" href="prayer-times.html"></a>
+           <a class="nonblock nontext clearfix grpelem" id="u2836-4" href="prayer-times.html"><!-- content --><p>View Full Timetable</p></a>
+          </div>
+         </div>
+         <div class="colelem" id="u2830"><!-- custom html -->
+          <iframe src="https://uvalli.github.io/LSM/Website/todaytimetable/timetable31.html" frameborder="0" width="100%" height ="625px" ></iframe> 
+</div>
+        </div>
+       </li>
+      </ul>
+      <div class="grpelem" id="u2784"><!-- custom html -->
+       <iframe src="https://uvalli.github.io/LSM/Website/todaytimetable/timetableheader.html" frameborder="0" width="100%" ></iframe>
+
+</div>
      </div>
     </div>
     <div class="clearfix colelem" id="ppu663"><!-- group -->
@@ -199,8 +217,10 @@ var __adobewebfontsappname__ = "muse";
    window.jQuery || document.write('\x3Cscript src="scripts/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
 </script>
   <script src="scripts/museutils.js?3865766194" type="text/javascript"></script>
-  <script src="scripts/jquery.musepolyfill.bgsize.js?291134478" type="text/javascript"></script>
   <script src="scripts/jquery.musemenu.js?3788803530" type="text/javascript"></script>
+  <script src="scripts/jquery.musepolyfill.bgsize.js?291134478" type="text/javascript"></script>
+  <script src="scripts/webpro.js?3903299128" type="text/javascript"></script>
+  <script src="scripts/musewpdisclosure.js?4285748861" type="text/javascript"></script>
   <script src="scripts/jquery.tobrowserwidth.js?3842421675" type="text/javascript"></script>
   <script src="scripts/jquery.watch.js?4068933136" type="text/javascript"></script>
   <!-- Other scripts -->
@@ -210,6 +230,7 @@ Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
 $('.browser_width').toBrowserWidth();/* browser width elements */
 Muse.Utils.prepHyperlinks(true);/* body */
 Muse.Utils.initWidget('.MenuBar', function(elem) { return $(elem).museMenu(); });/* unifiedNavBar */
+Muse.Utils.initWidget('#accordionu2794', function(elem) { return new WebPro.Widget.Accordion(elem, {canCloseAll:true,defaultIndex:-1}); });/* #accordionu2794 */
 Muse.Utils.fullPage('#page');/* 100% height page */
 Muse.Utils.showWidgetsWhenReady();/* body */
 Muse.Utils.transformMarkupToFixBrowserProblems();/* body */

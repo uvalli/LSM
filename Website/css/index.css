@@ -7,53 +7,20 @@
 {
 	z-index: 1;
 	width: 994px;
-	min-height: 1232px;
+	min-height: 1231.9106911120093px;
 	background-image: none;
 	border-style: none;
 	border-color: #000000;
 	background-color: #FFFFFF;
+	padding-bottom: 0px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 #page_position_content
 {
-	margin-top: -36px;
+	margin-top: 20px;
 	margin-bottom: -135px;
-}
-
-#u2786
-{
-	z-index: 165;
-	width: 722px;
-	margin-left: 283px;
-	position: relative;
-}
-
-#u72
-{
-	z-index: 166;
-	width: 722px;
-	border-color: #000000;
-	padding-bottom: 163px;
-	position: relative;
-	margin-right: -10000px;
-	background: #057C05 url("../images/1393437846.jpg") no-repeat center center;
-	background-size: cover !important;
-}
-
-#u2784
-{
-	z-index: 167;
-	width: 340px;
-	min-height: 82px;
-	border-style: none;
-	border-color: transparent;
-	background-color: transparent;
-	font-family: cantarell, sans-serif;
-	font-weight: 400;
-	position: relative;
-	margin-right: -10000px;
 }
 
 #u885
@@ -295,6 +262,194 @@
 	margin-right: -10000px;
 	margin-top: 6px;
 	left: 10px;
+}
+
+#u72
+{
+	z-index: 165;
+	width: 722px;
+	border-color: #000000;
+	padding-bottom: 152px;
+	margin-left: 283px;
+	position: relative;
+	background: #057C05 url("../images/1393437846.jpg") no-repeat center center;
+	background-size: cover !important;
+}
+
+#u2832
+{
+	z-index: 166;
+	width: 722px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: -57px;
+}
+
+#accordionu2794
+{
+	z-index: 167;
+	width: 722px;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 1px;
+}
+
+#u2814
+{
+	z-index: 168;
+	width: 722px;
+	position: relative;
+}
+
+#u2815-4
+{
+	z-index: 169;
+	width: 712px;
+	min-height: 36px;
+	border-color: #FFFFFF;
+	background-color: #057C05;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: right;
+	font-size: 16px;
+	letter-spacing: 2px;
+	color: #FFFFFF;
+	line-height: 16px;
+	font-family: quantico, sans-serif;
+	font-weight: 400;
+	position: relative;
+}
+
+#u2815-4:hover
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-height: 36px;
+	margin: 0px;
+}
+
+#u2815-4:active
+{
+	background-color: #057C05;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-height: 36px;
+	margin: 0px;
+}
+
+#u2815-4.AccordionPanelTabOpen
+{
+	background-color: #057C05;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-height: 36px;
+	margin: 0px;
+}
+
+#u2815-4.AccordionPanelTabOpen p
+{
+	color: #057C05;
+	visibility: inherit;
+	padding-right: 20px;
+	padding-top: 20px;
+	font-family: Verdana, Tahoma, Geneva, sans-serif;
+}
+
+#u2815-2
+{
+	padding-right: 25px;
+	padding-left: 5px;
+	padding-top: 20px;
+}
+
+#u2816
+{
+	z-index: 173;
+	width: 602px;
+	border-color: #FFFFFF;
+	background-color: #69B069;
+	background-color: rgba(5, 124, 5, 0.6);
+	padding-left: 60px;
+	padding-right: 60px;
+	padding-bottom: 9.051325606778505px;
+	position: relative;
+	-pie-background: rgba(5, 124, 5, 0.6);
+}
+
+#u2837
+{
+	z-index: 174;
+	width: 242px;
+	margin-left: 336px;
+	position: relative;
+}
+
+#u2835
+{
+	z-index: 175;
+	width: 242px;
+	border-style: none;
+	border-color: transparent;
+	background-color: #FFFFFF;
+	padding-bottom: 5px;
+	position: relative;
+	margin-right: -10000px;
+}
+
+#u2835:active
+{
+	background-color: #E5FFE5;
+	margin: 0px -10000px 0px 0px;
+}
+
+#u2836-4
+{
+	z-index: 176;
+	width: 206px;
+	min-height: 21px;
+	text-align: center;
+	font-size: 15px;
+	letter-spacing: 3px;
+	color: #057C05;
+	line-height: 18px;
+	font-family: quantico, sans-serif;
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
+	margin-top: 5px;
+	left: 15px;
+}
+
+#u2830
+{
+	z-index: 180;
+	width: 602px;
+	min-height: 643px;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	text-align: right;
+	position: relative;
+}
+
+.AccordionPanelTab /* accordion */
+{
+	cursor: pointer;
+}
+
+#u2784
+{
+	z-index: 181;
+	width: 340px;
+	min-height: 166px;
+	border-style: none;
+	border-color: transparent;
+	background-color: transparent;
+	font-family: cantarell, sans-serif;
+	font-weight: 400;
+	position: relative;
+	margin-right: -10000px;
 }
 
 #ppu663
@@ -560,7 +715,7 @@
 	border-color: #000000;
 	background-color: #FFFFFF;
 	margin-left: 283px;
-	margin-top: 86px;
+	margin-top: 90px;
 	position: relative;
 }
 
@@ -617,7 +772,7 @@
 	border-color: transparent;
 	background-color: transparent;
 	margin-left: 283px;
-	margin-top: 36px;
+	margin-top: 35px;
 	position: relative;
 }
 
