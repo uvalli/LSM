@@ -23,15 +23,14 @@
 
 #u515-2,#u515-4
 {
-	font-size: 39px;
-	line-height: 47px;
+	font-size: 35px;
+	line-height: 42px;
 	letter-spacing: 1px;
 }
 
 #u515-6
 {
-	font-size: 16px;
-	line-height: 19px;
+	font-size: 14px;
 }
 
 #u515-5
@@ -60,8 +59,8 @@
 {
 	text-align: center;
 	font-size: 17px;
-	color: #FFFFFF;
 	line-height: 20px;
+	color: #FFFFFF;
 	font-family: Geneva, Verdana, Lucida Sans, Lucida Sans Unicode, sans-serif;
 	font-weight: normal;
 	position: relative;
@@ -141,9 +140,9 @@
 #u485-4,#u506-4,#u715-4,#u503-4,#u478-4,#u877-4
 {
 	text-align: center;
-	line-height: 20px;
 	font-size: 17px;
 	color: #FFFFFF;
+	line-height: 20px;
 	font-family: Geneva, Verdana, Lucida Sans, Lucida Sans Unicode, sans-serif;
 	position: relative;
 }
@@ -156,7 +155,8 @@
 #u514-11
 {
 	color: #FFFFFF;
-	font-size: 14px;
+	font-size: 12px;
+	line-height: 14px;
 	position: fixed;
 }
 
@@ -175,10 +175,10 @@
 #u884-4
 {
 	text-align: center;
-	font-size: 15px;
+	font-size: 13px;
 	letter-spacing: 3px;
+	line-height: 16px;
 	color: #FFFFFF;
-	line-height: 18px;
 	font-weight: bold;
 	position: relative;
 }

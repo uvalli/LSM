@@ -13,9 +13,9 @@
 #u2517-6
 {
 	background-color: transparent;
-	line-height: 28px;
 	font-size: 23px;
 	color: #4E4E4E;
+	line-height: 28px;
 	font-family: karla, sans-serif;
 	font-weight: 700;
 	position: relative;
@@ -30,9 +30,9 @@
 #u2520-8
 {
 	text-align: center;
-	line-height: 16px;
 	font-size: 13px;
 	color: #191919;
+	line-height: 16px;
 	position: relative;
 }
 
@@ -71,8 +71,8 @@
 {
 	text-align: right;
 	font-size: 13px;
-	color: #454545;
 	line-height: 16px;
+	color: #454545;
 	font-family: revalia, sans-serif;
 	font-weight: 400;
 	position: relative;
