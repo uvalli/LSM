@@ -28,11 +28,6 @@
 	letter-spacing: 1px;
 }
 
-#u515-6
-{
-	font-size: 14px;
-}
-
 #u515-5
 {
 	font-family: karla, sans-serif;
@@ -140,9 +135,9 @@
 #u485-4,#u506-4,#u715-4,#u503-4,#u478-4,#u877-4
 {
 	text-align: center;
+	line-height: 20px;
 	font-size: 17px;
 	color: #FFFFFF;
-	line-height: 20px;
 	font-family: Geneva, Verdana, Lucida Sans, Lucida Sans Unicode, sans-serif;
 	position: relative;
 }
@@ -155,9 +150,18 @@
 #u514-11
 {
 	color: #FFFFFF;
+	position: fixed;
+}
+
+#u515-6,#u514-2,#u514-4
+{
+	font-size: 14px;
+}
+
+#u514-5,#u514-7,#u514-9
+{
 	font-size: 12px;
 	line-height: 14px;
-	position: fixed;
 }
 
 #u490,#u483,#u504,#u709,#u497,#u476,#u874,#u882
