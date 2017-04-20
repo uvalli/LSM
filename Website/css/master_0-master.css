@@ -30,8 +30,8 @@
 {
 	text-align: left;
 	font-size: 16px;
-	line-height: 19px;
 	color: #434343;
+	line-height: 19px;
 	font-family: quicksand, sans-serif;
 	font-weight: 400;
 	position: relative;
@@ -41,8 +41,8 @@
 {
 	text-align: left;
 	font-size: 13px;
-	line-height: 16px;
 	color: #434343;
+	line-height: 16px;
 	font-family: quicksand, sans-serif;
 	font-weight: 400;
 	position: relative;
@@ -63,8 +63,8 @@
 	background-color: transparent;
 	text-align: left;
 	font-size: 12px;
-	line-height: 12px;
 	color: #545353;
+	line-height: 12px;
 	font-family: cantarell, sans-serif;
 	font-weight: 400;
 	position: relative;
@@ -135,8 +135,8 @@
 	background-color: transparent;
 	text-align: left;
 	font-size: 12px;
-	line-height: 12px;
 	color: #545353;
+	line-height: 12px;
 	font-family: cantarell, sans-serif;
 	font-weight: 400;
 	position: relative;
@@ -299,8 +299,8 @@
 	background-color: transparent;
 	text-align: left;
 	font-size: 12px;
-	line-height: 12px;
 	color: #545353;
+	line-height: 12px;
 	font-family: cantarell, sans-serif;
 	font-weight: 400;
 	position: relative;
@@ -386,8 +386,8 @@
 	background-color: transparent;
 	text-align: left;
 	font-size: 12px;
-	line-height: 12px;
 	color: #545353;
+	line-height: 12px;
 	font-family: cantarell, sans-serif;
 	font-weight: 400;
 	position: relative;
@@ -503,8 +503,8 @@
 	text-align: left;
 	font-size: 12px;
 	letter-spacing: 1px;
-	line-height: 15px;
 	color: #525252;
+	line-height: 15px;
 	font-family: quicksand, sans-serif;
 	font-weight: 400;
 	position: relative;
@@ -615,6 +615,11 @@
 	visibility: inherit;
 }
 
+#u2513_align_to_page,#u3133,#u3099,#u3091,#u3098,#u3093,#u3100,#u3089,#widgetu3101,#u3084_align_to_page,#menuu3043,#u3667,#u3077,#u3044,#u3070
+{
+	position: relative;
+}
+
 #u3071
 {
 	background-color: transparent;
@@ -650,47 +655,7 @@
 	visibility: inherit;
 }
 
-#u2513_align_to_page,#u3133,#u3099,#u3091,#u3098,#u3093,#u3100,#u3089,#widgetu3101,#u3084_align_to_page,#menuu3043,#u3667,#u3077,#u3044,#u3070,#u3063
-{
-	position: relative;
-}
-
-#u3064
-{
-	background-color: transparent;
-	position: relative;
-}
-
-#u3064:active
-{
-	background-color: transparent;
-}
-
-#u3067-4
-{
-	border-style: none;
-	border-color: transparent;
-	background-color: transparent;
-	text-align: center;
-	color: #737272;
-	font-family: quicksand, sans-serif;
-	font-weight: 400;
-	position: relative;
-}
-
-#u3071.MuseMenuActive #u3074-4 p,#u3064:hover #u3067-4 p
-{
-	color: #009245;
-	visibility: inherit;
-}
-
-#u3064:active #u3067-4 p
-{
-	color: #009245;
-	visibility: inherit;
-}
-
-#u3064.MuseMenuActive #u3067-4 p
+#u3071.MuseMenuActive #u3074-4 p
 {
 	color: #009245;
 	visibility: inherit;
@@ -705,8 +670,8 @@
 {
 	text-align: right;
 	font-size: 13px;
-	line-height: 16px;
 	color: #454545;
+	line-height: 16px;
 	font-family: revalia, sans-serif;
 	font-weight: 400;
 	position: relative;
