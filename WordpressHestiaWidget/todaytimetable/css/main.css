@@ -72,7 +72,7 @@ a:hover {
 .google-visualization-table-tr-over,
 .google-visualization-table-tr-over td,
 .google-visualization-table-tr-over-nonstrict {
-  background-color: rgba(5, 124, 4, 0.5) !important;
+  background-color: rgba(5, 124, 4, 0.0) !important;
   color: #fff !important;
 }
 
@@ -85,7 +85,7 @@ a:hover {
 .google-visualization-table-tr-head,
 .google-visualization-table-tr-head td,
 .google-visualization-table-tr-head-nonstrict {
-  background-color: rgba(5, 124, 4, 0.5) !important;
+  background-color: rgba(5, 124, 4, 0.0) !important;
   background-image: none !important;
   color: #fff !important;
 }
@@ -101,10 +101,10 @@ a:hover {
 
 ::-moz-selection {
   color: #fff;
-  background: rgba(5, 124, 4, 0.5);
+  background: rgba(5, 124, 4, 0.0);
 }
 
 ::selection {
   color: #fff;
-  background: rgba(5, 124, 4, 0.5);
+  background: rgba(5, 124, 4, 0.0);
 }
