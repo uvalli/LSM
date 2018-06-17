@@ -51,17 +51,15 @@ a:hover {
 .google-visualization-table-tr-even,
 .google-visualization-table-tr-even td,
 .google-visualization-table-tr-even-nonstrict {
-  
   color: rgba(5, 124, 4, 1) !important;
-  font-size: 11pt;
+  font-size: 12pt;
 }
 
 .google-visualization-table-tr-odd,
 .google-visualization-table-tr-odd td,
 .google-visualization-table-tr-odd-nonstrict {
-  
   color: rgba(5, 124, 4, 1) !important;
-  font-size: 11pt;
+  font-size: 12pt;
 }
 
 .google-visualization-table-tr-sel,
@@ -87,7 +85,7 @@ a:hover {
 .google-visualization-table-tr-head,
 .google-visualization-table-tr-head td,
 .google-visualization-table-tr-head-nonstrict {
-  background-color: rgba(5, 124, 4, 0.5) !important;
+  background-color: rgba(5, 124, 4, 1) !important;
   background-image: none !important;
   color: #fff !important;
   font-size: 14pt;
