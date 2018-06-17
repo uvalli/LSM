@@ -18,22 +18,22 @@
 
 h1 {
   font-family: Verdana, Geneva, sans-serif;
-  font-size: 12px;
-  line-height: 1.3px;
-  letter-spacing: -4px;
+  font-size: 16px;
+  line-height: 1.8px;
+  letter-spacing: -3px;
     padding-bottom: 5px;
 }
 
 p {
   font-family: Verdana, Geneva, sans-serif;
-    font-size: 11px;
+    font-size: 12px;
   line-height: 1.3px;
     padding: 0;
   width: 23px;
 }
 
 p.small {
-  font-size: 18px;
+  font-size: 11px;
 }
 
 a,
