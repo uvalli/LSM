@@ -52,7 +52,7 @@ a:hover {
 .google-visualization-table-tr-even td,
 .google-visualization-table-tr-even-nonstrict {
   color: rgba(5, 124, 4, 1) !important;
-  font-size: 11.5pt;
+  font-size: 12pt;
    letter-spacing: 2px;
 }
 
@@ -60,7 +60,7 @@ a:hover {
 .google-visualization-table-tr-odd td,
 .google-visualization-table-tr-odd-nonstrict {
   color: rgba(5, 124, 4, 1) !important;
-  font-size: 11.5pt;
+  font-size: 12pt;
     letter-spacing: 2px;
 }
 
@@ -90,8 +90,8 @@ a:hover {
 background-color: rgba(5, 124, 4, 1) !important;
   background-image: none !important;
   color: #fff !important;
-  font-size: 11pt;
-    letter-spacing: 3px;
+  font-size: 14pt;
+  letter-spacing: 3px;
 }
 
 .google-visualization-table .gradient {
