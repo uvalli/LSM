@@ -18,7 +18,7 @@
 
 h1 {
   font-family: Verdana, Geneva, sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.3px;
   letter-spacing: -4px;
     padding-bottom: 5px;
@@ -26,14 +26,14 @@ h1 {
 
 p {
   font-family: Verdana, Geneva, sans-serif;
-    font-size: 11px;
+    font-size: 13px;
   line-height: 1.3px;
     padding: 0;
   width: 23px;
 }
 
 p.small {
-  font-size: 8px;
+  font-size: 11px;
 }
 
 a,
