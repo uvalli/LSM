@@ -10,7 +10,7 @@
   right: 0;
   height: auto;
   width: auto;
-    color: #7b047c;
+    color: #024c00;
   text-align: center;
   overflow: visible;
   align: right;
@@ -39,7 +39,7 @@ p.small {
 a,
 a:visited,
 a:hover {
-  color: #057C05;
+  color: #024c00;
   
 }
 
@@ -51,7 +51,7 @@ a:hover {
 .google-visualization-table-tr-even,
 .google-visualization-table-tr-even td,
 .google-visualization-table-tr-even-nonstrict {
-  color: rgba(5, 124, 4, 1) !important;
+  color: #024c00 !important;
   font-size: 12pt;
    letter-spacing: 2px;
 }
@@ -59,7 +59,7 @@ a:hover {
 .google-visualization-table-tr-odd,
 .google-visualization-table-tr-odd td,
 .google-visualization-table-tr-odd-nonstrict {
-  color: rgba(5, 124, 4, 1) !important;
+  color: #024c00 !important;
   font-size: 12pt;
     letter-spacing: 2px;
 }
@@ -68,13 +68,13 @@ a:hover {
 .google-visualization-table-tr-sel td,
 .google-visualization-table-tr-sel-nonstrict {
   background-color: #fff !important;
-  color: rgba(5, 124, 4, 0.5)!important;
+  color: #024c00!important;
 }
 
 .google-visualization-table-tr-over,
 .google-visualization-table-tr-over td,
 .google-visualization-table-tr-over-nonstrict {
-  background-color: rgba(5, 124, 4, 1) !important;
+  background-color: #024c00 !important;
   color: #fff !important;
 }
 
@@ -87,7 +87,7 @@ a:hover {
 .google-visualization-table-tr-head,
 .google-visualization-table-tr-head td,
 .google-visualization-table-tr-head-nonstrict {
-background-color: rgba(5, 124, 4, 1) !important;
+background-color: #024c00 !important;
   background-image: none !important;
   color: #fff !important;
   font-size: 12pt;
@@ -105,10 +105,10 @@ background-color: rgba(5, 124, 4, 1) !important;
 
 ::-moz-selection {
   color: #fff;
-  background: rgba(5, 124, 4, 0.5);
+  background: #024c00;
 }
 
 ::selection {
   color: #fff;
-  background: rgba(5, 124, 4, 0.5);
+  background: #024c00;
 }
