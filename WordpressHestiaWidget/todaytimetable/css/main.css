@@ -10,6 +10,7 @@
   right: 0;
   height: auto;
   width: auto;
+    color: #7b047c;
   text-align: center;
   overflow: visible;
   align: right;
@@ -17,22 +18,22 @@
 
 h1 {
   font-family: Verdana, Geneva, sans-serif;
-  font-size: 16px;
-  line-height: 1.8px;
-  letter-spacing: -3px;
+  font-size: 12px;
+  line-height: 1.3px;
+  letter-spacing: -4px;
     padding-bottom: 5px;
 }
 
 p {
   font-family: Verdana, Geneva, sans-serif;
-    font-size: 12px;
+    font-size: 11px;
   line-height: 1.3px;
     padding: 0;
   width: 23px;
 }
 
 p.small {
-  font-size: 11px;
+  font-size: 8px;
 }
 
 a,
@@ -50,15 +51,15 @@ a:hover {
 .google-visualization-table-tr-even,
 .google-visualization-table-tr-even td,
 .google-visualization-table-tr-even-nonstrict {
-  background-color: rgba(5, 124, 4, 0.5) !important;
-  color: #fff !important;
+  background-color: #fff !important;
+  color: rgba(5, 124, 4, 0.5) !important;
 }
 
 .google-visualization-table-tr-odd,
 .google-visualization-table-tr-odd td,
 .google-visualization-table-tr-odd-nonstrict {
-  background-color: rgba(5, 124, 4, 0.5) !important;
-  color: #fff !important;
+  background-color: #fff !important;
+  color: rgba(5, 124, 4, 0.5) !important;
 }
 
 .google-visualization-table-tr-sel,
@@ -75,22 +76,15 @@ a:hover {
   color: #fff !important;
 }
 
-.google-visualization-table-td, {
-  color: #fff !important;
-  border: 0px solid #333 !important;
-  font-size: 14px;
-}
-
+.google-visualization-table-td,
 .google-visualization-table-th {
   border: 0px solid #333 !important;
   color: #fff !important;
-  font-size: 16px;
 }
 
 .google-visualization-table-tr-head,
 .google-visualization-table-tr-head td,
 .google-visualization-table-tr-head-nonstrict {
-  font-size: 16px;
   background-color: rgba(5, 124, 4, 0.5) !important;
   background-image: none !important;
   color: #fff !important;
@@ -98,7 +92,6 @@ a:hover {
 
 .google-visualization-table .gradient {
   background-image: none !important;
-    background-color: rgba(5, 124, 4, 0.0) !important;
 }
 
 
@@ -108,10 +101,10 @@ a:hover {
 
 ::-moz-selection {
   color: #fff;
-  background: rgba(5, 124, 4, 0.0);
+  background: rgba(5, 124, 4, 0.5);
 }
 
 ::selection {
   color: #fff;
-  background: rgba(5, 124, 4, 0.0);
+  background: rgba(5, 124, 4, 0.5);
 }
