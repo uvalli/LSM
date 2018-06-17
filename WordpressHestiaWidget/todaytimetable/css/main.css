@@ -51,7 +51,7 @@ a:hover {
 .google-visualization-table-tr-even,
 .google-visualization-table-tr-even td,
 .google-visualization-table-tr-even-nonstrict {
-  background-color: #fff !important;
+  
   color: rgba(5, 124, 4, 1) !important;
   font-size: 11pt;
 }
@@ -59,7 +59,7 @@ a:hover {
 .google-visualization-table-tr-odd,
 .google-visualization-table-tr-odd td,
 .google-visualization-table-tr-odd-nonstrict {
-  background-color: #fff !important;
+  
   color: rgba(5, 124, 4, 1) !important;
   font-size: 11pt;
 }
