@@ -53,6 +53,7 @@ a:hover {
 .google-visualization-table-tr-even-nonstrict {
   color: rgba(5, 124, 4, 1) !important;
   font-size: 11.5pt;
+   letter-spacing: 3px;
 }
 
 .google-visualization-table-tr-odd,
@@ -60,6 +61,7 @@ a:hover {
 .google-visualization-table-tr-odd-nonstrict {
   color: rgba(5, 124, 4, 1) !important;
   font-size: 11.5pt;
+    letter-spacing: 3px;
 }
 
 .google-visualization-table-tr-sel,
@@ -89,6 +91,7 @@ background-color: rgba(5, 124, 4, 1) !important;
   background-image: none !important;
   color: #fff !important;
   font-size: 11pt;
+    letter-spacing: 5px;
 }
 
 .google-visualization-table .gradient {
