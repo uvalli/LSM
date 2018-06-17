@@ -76,15 +76,10 @@ a:hover {
   color: #fff !important;
 }
 
-.google-visualization-table-td {
-border: 0px solid #333 !important;
-  color: #fff !important;
-  font-size:11pt;
-}
+.google-visualization-table-td,
 .google-visualization-table-th {
   border: 0px solid #333 !important;
   color: #fff !important;
-  font-size:12pt;
 }
 
 .google-visualization-table-tr-head,
