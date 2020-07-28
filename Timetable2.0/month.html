@@ -79,7 +79,20 @@
           var age = data.feed.entry[i]['gsx$_cokwr']['$t'];
           var email = data.feed.entry[i]['gsx$_cpzh4']['$t'];
 
-          document.getElementById('demo').innerHTML += ('<tr>' + '<td>' + Date + '</td>' + '<td>' + Fajr B + '</td>' + '<td>' + Sunrise + '</td>' '<td>' + Zuhr B + '</td>' + '<td>' + Asr B + '</td>' + '<td>' + Maghrib B + '</td>' + '</tr>');
+          document.getElementById('demo').innerHTML += ('<tr>' + 
+                                                        '<td>' + Date + '</td>' + 
+                                                        '<td>' + Fajr B + '</td>' + 
+                                                        '<td>' + Sunrise + '</td>' + 
+                                                        '<td>' + Zuhr B + '</td>' + 
+                                                        '<td>' + Asr B + '</td>' + 
+                                                        '<td>' + Maghrib B + '</td>' + 
+                                                        '<td>' + Isha B + '</td>' + 
+                                                        '<td>' + Fajr J + '</td>' + 
+                                                        '<td>' + Zuhr J + '</td>' + 
+                                                        '<td>' + Asr J + '</td>' + 
+                                                        '<td>' + Maghrib J + '</td>' + 
+                                                        '<td>' + Isha J + '</td>' + 
+                                                        '</tr>');
 
         }
       });
