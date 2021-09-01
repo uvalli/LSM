@@ -82,6 +82,10 @@ a:hover {
 .google-visualization-table-th {
   border: 0px solid #333 !important;
   color: #fff !important;
+    padding-top: 0.9rem !important;
+padding-bottom: 0.9rem !important;
+padding-right: 0.3rem !important;
+padding-left: 0.3rem !important;
 }
 
 .google-visualization-table-tr-head,
@@ -92,7 +96,6 @@ background-color: #024c00 !important;
   color: #fff !important;
   font-size: 12pt;
   letter-spacing: 3px;
-    padding:0.9rem !important;
 }
 
 .google-visualization-table .gradient {
