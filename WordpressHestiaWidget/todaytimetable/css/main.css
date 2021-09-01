@@ -92,6 +92,7 @@ background-color: #024c00 !important;
   color: #fff !important;
   font-size: 12pt;
   letter-spacing: 3px;
+    padding:0.9rem !important;
 }
 
 .google-visualization-table .gradient {
