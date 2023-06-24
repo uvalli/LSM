@@ -10,7 +10,7 @@
   right: 0;
   height: auto;
   width: auto;
-    color: #024c00;
+    color: #e3e3e3;
   text-align: center;
   overflow: visible;
   align: right;
@@ -51,7 +51,7 @@ a:hover {
 .google-visualization-table-tr-even,
 .google-visualization-table-tr-even td,
 .google-visualization-table-tr-even-nonstrict {
-  color: #024c00 !important;
+  color: #e3e3e3 !important;
   font-size: 12pt;
    letter-spacing: 2px;
 }
@@ -59,7 +59,7 @@ a:hover {
 .google-visualization-table-tr-odd,
 .google-visualization-table-tr-odd td,
 .google-visualization-table-tr-odd-nonstrict {
-  color: #024c00 !important;
+  color: #e3e3e3 !important;
   font-size: 12pt;
     letter-spacing: 2px;
 }
