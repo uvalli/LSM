@@ -1,4 +1,4 @@
-﻿/***************************
+/***************************
     Site Design CSS
 ***************************/
 
@@ -10,7 +10,7 @@
   right: 0;
   height: auto;
   width: auto;
-    color: #e3e3e3;
+    color: #024c00;
   text-align: center;
   overflow: visible;
   align: right;
@@ -51,7 +51,7 @@ a:hover {
 .google-visualization-table-tr-even,
 .google-visualization-table-tr-even td,
 .google-visualization-table-tr-even-nonstrict {
-  color: #e3e3e3 !important;
+  color: #024c00 !important;
   font-size: 12pt;
    letter-spacing: 2px;
 }
@@ -59,7 +59,7 @@ a:hover {
 .google-visualization-table-tr-odd,
 .google-visualization-table-tr-odd td,
 .google-visualization-table-tr-odd-nonstrict {
-  color: #e3e3e3 !important;
+  color: #024c00 !important;
   font-size: 12pt;
     letter-spacing: 2px;
 }
