@@ -74,7 +74,7 @@ a:hover {
 .google-visualization-table-tr-over,
 .google-visualization-table-tr-over td,
 .google-visualization-table-tr-over-nonstrict {
-  background-color: #024c00 !important;
+  background-color: #e3e3e3 !important;
   color: #fff !important;
 }
 
@@ -91,7 +91,7 @@ padding-left: 0.3rem !important;
 .google-visualization-table-tr-head,
 .google-visualization-table-tr-head td,
 .google-visualization-table-tr-head-nonstrict {
-background-color: #024c00 !important;
+background-color: #e3e3e3 !important;
   background-image: none !important;
   color: #fff !important;
   font-size: 12pt;
@@ -109,10 +109,10 @@ background-color: #024c00 !important;
 
 ::-moz-selection {
   color: #fff;
-  background: #024c00;
+  background: #e3e3e3;
 }
 
 ::selection {
   color: #fff;
-  background: #024c00;
+  background: #e3e3e3;
 }
