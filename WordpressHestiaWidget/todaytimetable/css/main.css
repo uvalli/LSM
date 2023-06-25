@@ -27,7 +27,7 @@ h1 {
 p {
   font-family: Verdana, Geneva, sans-serif;
     font-size: 11pt;
-  line-height: 1.3px;
+  line-height: 1px;
     padding: 0;
   width: 23px;
 }
@@ -95,7 +95,7 @@ background-color: #e3e3e3 !important;
   background-image: none !important;
   color: #024c00 !important;
   font-size: 12pt;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 .google-visualization-table .gradient {
