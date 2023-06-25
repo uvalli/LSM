@@ -54,6 +54,7 @@ a:hover {
   color: #fff !important;
   font-size: 12pt;
    letter-spacing: 2px;
+    background-color: #009879 !important;
 }
 
 .google-visualization-table-tr-odd,
@@ -62,6 +63,7 @@ a:hover {
   color: #fff !important;
   font-size: 12pt;
     letter-spacing: 2px;
+    background-color: #009879 !important;
 }
 
 .google-visualization-table-tr-sel,
