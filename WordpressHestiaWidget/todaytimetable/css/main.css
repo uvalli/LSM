@@ -10,7 +10,7 @@
   right: 0;
   height: auto;
   width: auto;
-    color: #fff;
+    color: #FFF9DC;
   text-align: center;
   overflow: visible;
   align: right;
@@ -39,7 +39,7 @@ p.small {
 a,
 a:visited,
 a:hover {
-  color: #fff;
+  color: #FFF9DC;
   
 }
 
@@ -51,7 +51,7 @@ a:hover {
 .google-visualization-table-tr-even,
 .google-visualization-table-tr-even td,
 .google-visualization-table-tr-even-nonstrict {
-  color: #fff !important;
+  color: #FFF9DC !important;
   font-size: 12pt;
    letter-spacing: 2px;
     background-color: #009879 !important;
@@ -60,7 +60,7 @@ a:hover {
 .google-visualization-table-tr-odd,
 .google-visualization-table-tr-odd td,
 .google-visualization-table-tr-odd-nonstrict {
-  color: #fff !important;
+  color: #FFF9DC !important;
   font-size: 12pt;
     letter-spacing: 2px;
     background-color: #009879 !important;
@@ -70,20 +70,20 @@ a:hover {
 .google-visualization-table-tr-sel td,
 .google-visualization-table-tr-sel-nonstrict {
   background-color: #009879 !important;
-  color: #fff!important;
+  color: #FFF9DC!important;
 }
 
 .google-visualization-table-tr-over,
 .google-visualization-table-tr-over td,
 .google-visualization-table-tr-over-nonstrict {
   background-color: #009879 !important;
-  color: #fff !important;
+  color: #FFF9DC !important;
 }
 
 .google-visualization-table-td,
 .google-visualization-table-th {
   border: 0px solid #333 !important;
-color: #fff!important;
+color: #FFF9DC!important;
   font-family: Gill Sans, sans-serif !important;
 padding-top: 0.5rem !important;
 padding-bottom: 0.5rem !important;
@@ -97,7 +97,7 @@ padding-left: 0.3rem !important;
 .google-visualization-table-tr-head-nonstrict {
 background-color: #009879 !important;
   background-image: none !important;
-  color: #fff !important;
+  color: #FFF9DC !important;
  font-size: 12pt;
  letter-spacing: 2px;
 box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -114,11 +114,11 @@ box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 ***************************/
 
 ::-moz-selection {
-  color: #fff;
+  color: #FFF9DC;
   background: #009879;
 }
 
 ::selection {
-  color: #fff;
+  color: #FFF9DC;
   background: #009879;
 }
