@@ -82,7 +82,8 @@ a:hover {
 .google-visualization-table-th {
   border: 0px solid #333 !important;
   color: #024c00 !important;
-    padding-top: 0.5rem !important;
+font-family: Gill Sans, sans-serif !important;
+padding-top: 0.5rem !important;
 padding-bottom: 0.5rem !important;
 padding-right: 0.3rem !important;
 padding-left: 0.3rem !important;
