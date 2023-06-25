@@ -10,7 +10,7 @@
   right: 0;
   height: auto;
   width: auto;
-    color: #024c00;
+    color: #fff;
   text-align: center;
   overflow: visible;
   align: right;
@@ -39,7 +39,7 @@ p.small {
 a,
 a:visited,
 a:hover {
-  color: #024c00;
+  color: #fff;
   
 }
 
@@ -51,7 +51,7 @@ a:hover {
 .google-visualization-table-tr-even,
 .google-visualization-table-tr-even td,
 .google-visualization-table-tr-even-nonstrict {
-  color: #024c00 !important;
+  color: #fff !important;
   font-size: 12pt;
    letter-spacing: 2px;
 }
@@ -59,7 +59,7 @@ a:hover {
 .google-visualization-table-tr-odd,
 .google-visualization-table-tr-odd td,
 .google-visualization-table-tr-odd-nonstrict {
-  color: #024c00 !important;
+  color: #fff !important;
   font-size: 12pt;
     letter-spacing: 2px;
 }
@@ -67,14 +67,14 @@ a:hover {
 .google-visualization-table-tr-sel,
 .google-visualization-table-tr-sel td,
 .google-visualization-table-tr-sel-nonstrict {
-  background-color: #FFF9DC !important;
-  color: #024c00!important;
+  background-color: #009879 !important;
+  color: #fff!important;
 }
 
 .google-visualization-table-tr-over,
 .google-visualization-table-tr-over td,
 .google-visualization-table-tr-over-nonstrict {
-  background-color: #e3e3e3 !important;
+  background-color: #009879 !important;
   color: #fff !important;
 }
 
@@ -113,10 +113,10 @@ box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
 ::-moz-selection {
   color: #fff;
-  background: #e3e3e3;
+  background: #009879;
 }
 
 ::selection {
   color: #fff;
-  background: #e3e3e3;
+  background: #009879;
 }
