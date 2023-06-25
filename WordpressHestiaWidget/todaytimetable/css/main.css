@@ -87,17 +87,19 @@ padding-top: 0.5rem !important;
 padding-bottom: 0.5rem !important;
 padding-right: 0.3rem !important;
 padding-left: 0.3rem !important;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
 }
 
 .google-visualization-table-tr-head,
 .google-visualization-table-tr-head td,
 .google-visualization-table-tr-head-nonstrict {
-background-color: #e3e3e3 !important;
+background-color: #009879 !important;
   background-image: none !important;
-  color: #024c00 !important;
-  font-size: 12pt;
-  letter-spacing: 2px;
+  color: #fff !important;
+ font-size: 12pt;
+ letter-spacing: 2px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    
 }
 
 .google-visualization-table .gradient {
