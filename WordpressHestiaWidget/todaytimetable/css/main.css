@@ -54,7 +54,7 @@ a:hover {
   color: #FFF9DC !important;
   font-size: 12pt;
    letter-spacing: 2px;
-    background-color: #009879 !important;
+    background-color: #086754 !important;
 }
 
 .google-visualization-table-tr-odd,
@@ -63,20 +63,20 @@ a:hover {
   color: #FFF9DC !important;
   font-size: 12pt;
     letter-spacing: 2px;
-    background-color: #009879 !important;
+    background-color: #086754 !important;
 }
 
 .google-visualization-table-tr-sel,
 .google-visualization-table-tr-sel td,
 .google-visualization-table-tr-sel-nonstrict {
-  background-color: #009879 !important;
+  background-color: #086754 !important;
   color: #FFF9DC!important;
 }
 
 .google-visualization-table-tr-over,
 .google-visualization-table-tr-over td,
 .google-visualization-table-tr-over-nonstrict {
-  background-color: #009879 !important;
+  background-color: #086754 !important;
   color: #FFF9DC !important;
 }
 
@@ -95,7 +95,7 @@ padding-left: 0.3rem !important;
 .google-visualization-table-tr-head,
 .google-visualization-table-tr-head td,
 .google-visualization-table-tr-head-nonstrict {
-background-color: #009879 !important;
+background-color: #086754 !important;
   background-image: none !important;
   color: #FFF9DC !important;
  font-size: 12pt;
@@ -115,10 +115,10 @@ box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
 ::-moz-selection {
   color: #FFF9DC;
-  background: #009879;
+  background: #086754;
 }
 
 ::selection {
   color: #FFF9DC;
-  background: #009879;
+  background: #086754;
 }
