@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LS Prayer Times</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f1ea;
+    --card: #ffffff;
+    --ink: #12302b;
+    --muted: #5f726d;
+    --line: #e3e7e4;
+    --accent: #086754;
+    --hero-bg: #086754;
+    --hero-ink: #ffffff;
+    --accent-ink: #ffffff;
+    --glow: #e6f1ed;
+    --past: #9aa8a4;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0c1f1c;
+      --card: #12302b;
+      --ink: #eef3f1;
+      --muted: #9db3ad;
+      --line: #21433d;
+      --accent: #e9c46a;
+      --accent-ink: #1a2b27;
+      --glow: #1a3d36;
+      --past: #5f7a73;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0c1f1c; --card: #12302b; --ink: #eef3f1; --muted: #9db3ad;
+    --line: #21433d; --accent: #e9c46a; --accent-ink: #1a2b27; --glow: #1a3d36; --past: #5f7a73;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: transparent;
+    color: var(--ink);
+    font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-variant-numeric: tabular-nums;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .widget {
+    width: 100%;
+    max-width: 420px;
+    background: #086754;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  /* Hero: next prayer */
+  .hero {
+    background: var(--hero-bg);
+    color: var(--hero-ink);
+    padding: 22px 24px 20px;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+  }
+  .hero-top {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+    font-size: 14px; opacity: .85;
+  }
+  .hero-hijri { font-size: 14px; opacity: .85; margin-top: 2px; }
+  .hero-name { font-size: 15px; font-weight: 500; margin: 22px 0 2px; opacity: .9; }
+  .hero-time {
+    font-size: clamp(44px, 14vw, 60px);
+    font-weight: 700; letter-spacing: -0.03em; line-height: 1;
+  }
+  .hero-count { margin-top: 10px; font-size: 15px; opacity: .9; }
+  .hero-count strong { font-weight: 600; }
+
+  /* Table */
+  .list { list-style: none; margin: 0; padding: 8px 12px 12px; }
+  .head, .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) repeat(var(--cols, 2), minmax(0, 1fr));
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+  }
+  .head { font-size: 13px; color: rgba(255,255,255,.72); padding-bottom: 6px; }
+  .head span:not(:first-child), .row span:not(:first-child) { text-align: right; }
+  .row { border-radius: 12px; font-size: 17px; }
+  .row + .row { margin-top: 2px; }
+  .row .name { font-weight: 600; }
+  .row.past { color: rgba(255,255,255,.5); }
+  .row.past .name { font-weight: 500; }
+  .row.next {
+    background: rgba(255,255,255,.16);
+    box-shadow: inset 3px 0 0 #ffffff;
+  }
+  .row.next .name::after {
+    content: "Next"; margin-left: 8px; font-size: 12px; font-weight: 600;
+    color: #ffffff; vertical-align: 1px;
+  }
+
+  .row.now {
+    background: #ffffff; color: #086754;
+  }
+  .row.now .name::after {
+    content: "Now"; margin-left: 8px; font-size: 12px; font-weight: 600; color: #086754;
+    vertical-align: 1px;
+  }
+  .hero.live .hero-count strong::before {
+    content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+    background: currentColor; margin-right: 8px; animation: pulse 1.4s ease-in-out infinite;
+  }
+
+  /* States */
+  .state { padding: 40px 24px; text-align: center; color: rgba(255,255,255,.85); font-size: 15px; line-height: 1.5; }
+  .state button {
+    margin-top: 14px; font: inherit; font-weight: 600; cursor: pointer;
+    background: #ffffff; color: #086754;
+    border: 0; border-radius: 999px; padding: 10px 20px;
+  }
+  .skeleton { height: 14px; border-radius: 7px; background: rgba(255,255,255,.22); margin: 14px auto; width: 70%; animation: pulse 1.4s ease-in-out infinite; }
+  @keyframes pulse { 50% { opacity: .45; } }
+  button:focus-visible { outline: 3px solid #ffffff; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .skeleton { animation: none; } }
+</style>
+</head>
+<body>
+<main class="widget" aria-live="polite">
+  <section class="hero" id="hero" hidden>
+    <div class="hero-top"><span id="dateText"></span><span id="clockText"></span></div>
+    <div class="hero-hijri" id="hijriText"></div>
+    <div class="hero-name" id="heroName"></div>
+    <div class="hero-time" id="heroTime"></div>
+    <div class="hero-count" id="heroCount"></div>
+  </section>
+  <div id="body">
+    <div class="state"><div class="skeleton"></div><div class="skeleton" style="width:55%"></div><div class="skeleton"></div></div>
+  </div>
+</main>
+
+<script>
+(function () {
+  // ---- Settings -----------------------------------------------------------
+  var SHEET_ID = "1Zx8nlmg0CwF1o2EzMJknJuxUU8Wk57LAfJ-rZnDsX4k";
+  var QUERY    = "SELECT AT,AU,AV WHERE AW CONTAINS 'X'";   // same query as the original page
+  var GID      = 0;
+  // -------------------------------------------------------------------------
+
+  var rows = [];      // {name, cells:[{text, mins}], startMins}
+  var labels = [];
+  var timer = null;
+  var tomorrow = null;   // {text, mins} jamaat time for tomorrow's Fajr, read from AQ11:AR11
+  var lastDay = null;
+  var TOMORROW_RANGE = "AQ11:AR11";
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  function loadTomorrow() {
+    tomorrow = null;
+    var cb = "lsTm" + Date.now();
+    var script = document.createElement("script");
+    var timeout = setTimeout(clean, 12000);
+    function clean() { clearTimeout(timeout); delete window[cb]; script.remove(); }
+    window[cb] = function (resp) {
+      clean();
+      try {
+        if (resp.status !== "ok") return;
+        // AQ11 = Fajr start, AR11 = Fajr jamaat (the second cell).
+        var cells = resp.table.rows[0].c || [];
+        var jam = { text: cellText(cells[1]), mins: cellMinutes(cells[1]) };
+        if (jam.mins === null) return;
+        tomorrow = jam;
+      } catch (e) {}
+    };
+    script.onerror = clean;
+    script.src = "https://docs.google.com/spreadsheets/d/" + SHEET_ID + "/gviz/tq?gid=" + GID +
+      "&headers=0&range=" + TOMORROW_RANGE + "&tqx=out:json;responseHandler:" + cb;
+    document.head.appendChild(script);
+  }
+
+  function load() {
+    loadTomorrow();
+    $("hero").hidden = true;
+    $("body").innerHTML = '<div class="state"><div class="skeleton"></div><div class="skeleton" style="width:55%"></div><div class="skeleton"></div></div>';
+
+    var cb = "lsCb" + Date.now();
+    var script = document.createElement("script");
+    var done = false;
+    var timeout = setTimeout(function () { fail("The request timed out."); }, 12000);
+
+    function cleanup() { clearTimeout(timeout); delete window[cb]; script.remove(); }
+    function fail(msg) { if (done) return; done = true; cleanup(); showError(msg); }
+
+    window[cb] = function (resp) {
+      if (done) return; done = true; cleanup();
+      if (resp.status !== "ok") {
+        var m = (resp.errors && resp.errors[0] && (resp.errors[0].detailed_message || resp.errors[0].message)) || "Unknown error";
+        return showError(m);
+      }
+      try { parse(resp.table); render(); } catch (e) { showError("The sheet format was not what the widget expected."); }
+    };
+    script.onerror = function () { fail("Could not reach Google Sheets."); };
+    script.src = "https://docs.google.com/spreadsheets/d/" + SHEET_ID + "/gviz/tq?gid=" + GID +
+      "&tqx=out:json;responseHandler:" + cb + "&tq=" + encodeURIComponent(QUERY);
+    document.head.appendChild(script);
+  }
+
+  function showError(msg) {
+    $("hero").hidden = true;
+    $("body").innerHTML = '<div class="state">Prayer times could not be loaded.<br>' + escapeHtml(msg) +
+      '<br><button id="retry">Try again</button></div>';
+    $("retry").onclick = load;
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  // Convert a sheet cell to minutes after midnight, or null if it is not a time.
+  function cellMinutes(c) {
+    if (!c) return null;
+    if (Array.isArray(c.v) && c.v.length >= 2) return c.v[0] * 60 + c.v[1];           // timeofday
+    var s = (c.f != null ? c.f : c.v);
+    if (s == null) return null;
+    var m = String(s).match(/(\d{1,2})[:.](\d{2})\s*(am|pm)?/i);
+    if (!m) return null;
+    var h = +m[1], min = +m[2], ap = m[3] && m[3].toLowerCase();
+    if (ap === "pm" && h < 12) h += 12;
+    if (ap === "am" && h === 12) h = 0;
+    return h * 60 + min;
+  }
+
+  function cellText(c) {
+    if (!c) return "";
+    var mins = cellMinutes(c);
+    if (mins !== null) return pad(Math.floor(mins / 60)) + ":" + pad(mins % 60);   // 24-hour HH:MM
+    return c.f != null ? c.f : (c.v == null ? "" : String(c.v));
+  }
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+
+  function parse(table) {
+    labels = table.cols.map(function (c) { return (c.label || "").trim(); });
+    rows = table.rows.map(function (r) {
+      var cells = (r.c || []).map(function (c) { return { text: cellText(c), mins: cellMinutes(c) }; });
+      var nameCell = cells[0];
+      var hasName = nameCell && nameCell.mins === null;
+      var times = cells.slice(hasName ? 1 : 0);
+      var start = null;
+      for (var i = 0; i < times.length; i++) { if (times[i].mins !== null) { start = times[i].mins; break; } }
+      return { name: hasName ? nameCell.text : "", times: times, start: start };
+    }).filter(function (r) { return r.times.some(function (t) { return t.text; }) || r.name; });
+    if (!rows.length) throw new Error("empty");
+
+    // Some sheets store 12-hour times without AM/PM (e.g. "5:45" for Maghrib).
+    // Prayers run in order through the day, so if a time is earlier than the one
+    // above it in the same column, it must be in the afternoon/evening: add 12 hours.
+    var maxCols = Math.max.apply(null, rows.map(function (r) { return r.times.length; }));
+    for (var c = 0; c < maxCols; c++) {
+      var prev = -1;
+      rows.forEach(function (r) {
+        var t = r.times[c];
+        if (!t || t.mins === null) return;
+        if (t.mins < prev && t.mins < 720) {
+          t.mins += 720;
+          t.text = pad(Math.floor(t.mins / 60)) + ":" + pad(t.mins % 60);
+        }
+        prev = Math.max(prev, t.mins);
+      });
+    }
+    rows.forEach(function (r) {
+      r.start = null;
+      for (var i = 0; i < r.times.length; i++) { if (r.times[i].mins !== null) { r.start = r.times[i].mins; break; } }
+    });
+
+    // Jamaat column: the one labelled "jamaat"/"jamat"/"jama'at" if present, otherwise the last time column.
+    var jamLabel = -1;
+    labels.forEach(function (l, i) { if (/jam/i.test(l)) jamLabel = i; });
+    var named = rows.some(function (r) { return r.name; });
+    var jamIdx = jamLabel >= 0 ? jamLabel - (named ? 1 : 0) : -1;
+    rows.forEach(function (r) {
+      var t = jamIdx >= 0 ? r.times[jamIdx] : null;
+      if (!t || t.mins === null) {
+        for (var i = r.times.length - 1; i >= 0; i--) { if (r.times[i].mins !== null) { t = r.times[i]; break; } }
+      }
+      r.jam = t ? t.mins : null;
+      r.jamText = t ? t.text : "";
+    });
+  }
+
+  function render() {
+    var colCount = Math.max.apply(null, rows.map(function (r) { return r.times.length; }));
+    var named = rows.some(function (r) { return r.name; });
+    var offset = labels.length - colCount;
+    var headLabels = labels.slice(Math.max(offset, 0));
+
+    var html = '<ul class="list" style="--cols:' + colCount + '">';
+    if (headLabels.some(Boolean)) {
+      html += '<li class="head"><span>' + (named ? escapeHtml(labels[0] || "") : "") + "</span>" +
+        headLabels.map(function (l) { return "<span>" + escapeHtml(l) + "</span>"; }).join("") + "</li>";
+    }
+    rows.forEach(function (r, i) {
+      html += '<li class="row" data-i="' + i + '"><span class="name">' + escapeHtml(r.name || "") + "</span>" +
+        r.times.map(function (t) { return "<span>" + escapeHtml(t.text) + "</span>"; }).join("") + "</li>";
+    });
+    html += "</ul>";
+    $("body").innerHTML = html;
+    $("hero").hidden = false;
+
+    tick();
+    clearInterval(timer);
+    timer = setInterval(tick, 1000);
+  }
+
+  function tick() {
+    var now = new Date();
+    var TZ = "Europe/London";   // always show UK time, whatever the visitor's device is set to
+    var parts = {};
+    new Intl.DateTimeFormat("en-GB", { timeZone: TZ, hourCycle: "h23", hour: "numeric", minute: "numeric", second: "numeric" })
+      .formatToParts(now).forEach(function (p) { parts[p.type] = +p.value; });
+    var nowMins = parts.hour * 60 + parts.minute + parts.second / 60;
+
+    $("dateText").textContent = now.toLocaleDateString("en-GB", { timeZone: TZ, weekday: "long", day: "numeric", month: "long" });
+    try {
+      $("hijriText").textContent = new Intl.DateTimeFormat("en-GB-u-ca-islamic-umalqura", { timeZone: TZ, day: "numeric", month: "long", year: "numeric" }).format(now) + " (Umm al-Qura)";
+    } catch (e) { $("hijriText").hidden = true; }
+    $("clockText").textContent = now.toLocaleTimeString("en-GB", { timeZone: TZ, hourCycle: "h23", hour: "2-digit", minute: "2-digit" });
+
+    var dayKey = now.toLocaleDateString("en-CA", { timeZone: TZ });
+    if (lastDay && lastDay !== dayKey) { lastDay = dayKey; load(); return; }   // new UK day: reload today's and tomorrow's times
+    lastDay = dayKey;
+
+    var GRACE = 5; // minutes after jamaat during which the prayer is shown as taking place
+    var nowIdx = -1, nextIdx = -1;
+    for (var i = 0; i < rows.length; i++) {
+      var j = rows[i].jam;
+      if (j === null) continue;
+      if (nowMins >= j && nowMins < j + GRACE) { nowIdx = i; break; }
+      if (nowMins < j) { nextIdx = i; break; }
+    }
+    var activeIdx = nowIdx !== -1 ? nowIdx : nextIdx;
+
+    document.querySelectorAll(".row").forEach(function (el, i) {
+      var j = rows[i].jam;
+      el.classList.toggle("now", i === nowIdx);
+      el.classList.toggle("next", i === nextIdx);
+      el.classList.toggle("past", j !== null && (activeIdx === -1 || i < activeIdx));
+    });
+
+    var nameEl = $("heroName"), timeEl = $("heroTime"), countEl = $("heroCount");
+    $("hero").classList.toggle("live", nowIdx !== -1);
+
+    if (activeIdx === -1) {
+      if (tomorrow) {
+        nameEl.textContent = "Tomorrow: Fajr jamaat";
+        timeEl.textContent = tomorrow.text;
+        var ts = Math.max(0, Math.round((1440 - nowMins + tomorrow.mins) * 60));
+        var th = Math.floor(ts / 3600), tm = Math.floor((ts % 3600) / 60), tsec = ts % 60;
+        countEl.innerHTML = "In <strong>" + (th ? th + "h " : "") + pad(tm) + "m " + pad(tsec) + "s</strong>";
+      } else {
+        nameEl.textContent = "All jamaats are finished for today";
+        timeEl.textContent = "";
+        countEl.textContent = "";
+      }
+      return;
+    }
+    var r = rows[activeIdx];
+    timeEl.textContent = r.jamText;
+
+    if (nowIdx !== -1) {
+      nameEl.textContent = (r.name || "Prayer") + " jamaat";
+      countEl.innerHTML = "<strong>Currently taking place</strong>";
+      return;
+    }
+    nameEl.textContent = (r.name || "Next") + " jamaat";
+    var secs = Math.max(0, Math.round((r.jam - nowMins) * 60));
+    var h = Math.floor(secs / 3600), m = Math.floor((secs % 3600) / 60), s = secs % 60;
+    countEl.innerHTML = "In <strong>" + (h ? h + "h " : "") + pad(m) + "m " + pad(s) + "s</strong>";
+  }
+
+  load();
+})();
+</script>
+</body>
+</html>
