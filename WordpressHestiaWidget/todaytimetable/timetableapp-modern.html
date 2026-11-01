@@ -45,7 +45,7 @@
   * { box-sizing: border-box; }
   html, body { margin: 0; }
   body {
-    background: #086754;
+    background: transparent;
     color: var(--ink);
     font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
     font-variant-numeric: tabular-nums;
@@ -134,7 +134,7 @@
   @media (prefers-reduced-motion: reduce) { .skeleton { animation: none; } }
 </style>
 </head>
-<body>
+<body style ="background-color: #086754">
 <main class="widget" aria-live="polite">
   <section class="hero" id="hero" hidden>
     <div class="hero-top"><span id="dateText"></span><span id="clockText"></span></div>
