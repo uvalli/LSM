@@ -43,9 +43,9 @@
   }
 
   * { box-sizing: border-box; }
-  html, body { margin: 0; }
+  html, body { margin: 0; background: #086754; }
   body {
-    background: transparent;
+    background: #086754;
     color: var(--ink);
     font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
     font-variant-numeric: tabular-nums;
@@ -77,6 +77,7 @@
   }
   .hero-hijri { font-size: 12px; opacity: .8; margin-top: 1px; }
   .hero-name { font-size: 13px; font-weight: 500; margin: 10px 0 0; opacity: .9; }
+  .hero-top, .hero-hijri { opacity: .7; }
   .hero-time {
     font-size: clamp(30px, 9vw, 38px);
     font-weight: 700; letter-spacing: -0.03em; line-height: 1;
@@ -100,21 +101,15 @@
   .row .name { font-weight: 600; }
   .row.past { color: rgba(255,255,255,.5); }
   .row.past .name { font-weight: 500; }
+  .row.tmrw span:not(.name) { color: #f4d58d; }   /* tomorrow's times */
+  .hero.tmrw .hero-name, .hero.tmrw .hero-time { color: #f4d58d; }
   .row.next {
     background: rgba(255,255,255,.16);
     box-shadow: inset 3px 0 0 #ffffff;
   }
-  .row.next .name::after {
-    content: "Next"; margin-left: 6px; font-size: 11px; font-weight: 600;
-    color: #ffffff; vertical-align: 1px;
-  }
 
   .row.now {
     background: #ffffff; color: #086754;
-  }
-  .row.now .name::after {
-    content: "Now"; margin-left: 6px; font-size: 11px; font-weight: 600; color: #086754;
-    vertical-align: 1px;
   }
   .hero.live .hero-count strong::before {
     content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%;
@@ -134,7 +129,7 @@
   @media (prefers-reduced-motion: reduce) { .skeleton { animation: none; } }
 </style>
 </head>
-<body style ="background-color: #086754">
+<body>
 <main class="widget" aria-live="polite">
   <section class="hero" id="hero" hidden>
     <div class="hero-top"><span id="dateText"></span><span id="clockText"></span></div>
@@ -152,44 +147,28 @@
 (function () {
   // ---- Settings -----------------------------------------------------------
   var SHEET_ID = "1Zx8nlmg0CwF1o2EzMJknJuxUU8Wk57LAfJ-rZnDsX4k";
-  var QUERY    = "SELECT AT,AU,AV WHERE AW CONTAINS 'X'";   // same query as the original page
   var GID      = 0;
+  var RANGE    = "AP1:AR16";   // prayer name | start | jamaat — today's and tomorrow's prayers
+  var GRACE    = 5;            // minutes after jamaat during which the prayer shows as "taking place"
+  var TZ       = "Europe/London";
   // -------------------------------------------------------------------------
 
-  var rows = [];      // {name, cells:[{text, mins}], startMins}
+  var today = [];       // today's prayers: {name, times:[{text,mins}], jam, jamText}
+  var tmr = [];         // tomorrow's matching prayer for each entry in today (or null)
   var labels = [];
   var timer = null;
-  var tomorrow = null;   // {text, mins} jamaat time for tomorrow's Fajr, read from AQ11:AR11
   var lastDay = null;
-  var TOMORROW_RANGE = "AQ11:AR11";
+  var shown = [];       // what each row currently displays: "t" (today) or "m" (tomorrow)
 
   var $ = function (id) { return document.getElementById(id); };
-
-  function loadTomorrow() {
-    tomorrow = null;
-    var cb = "lsTm" + Date.now();
-    var script = document.createElement("script");
-    var timeout = setTimeout(clean, 12000);
-    function clean() { clearTimeout(timeout); delete window[cb]; script.remove(); }
-    window[cb] = function (resp) {
-      clean();
-      try {
-        if (resp.status !== "ok") return;
-        // AQ11 = Fajr start, AR11 = Fajr jamaat (the second cell).
-        var cells = resp.table.rows[0].c || [];
-        var jam = { text: cellText(cells[1]), mins: cellMinutes(cells[1]) };
-        if (jam.mins === null) return;
-        tomorrow = jam;
-      } catch (e) {}
-    };
-    script.onerror = clean;
-    script.src = "https://docs.google.com/spreadsheets/d/" + SHEET_ID + "/gviz/tq?gid=" + GID +
-      "&headers=0&range=" + TOMORROW_RANGE + "&tqx=out:json;responseHandler:" + cb;
-    document.head.appendChild(script);
+  function pad(n) { return n < 10 ? "0" + n : "" + n; }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
   }
 
   function load() {
-    loadTomorrow();
     $("hero").hidden = true;
     $("body").innerHTML = '<div class="state"><div class="skeleton"></div><div class="skeleton" style="width:55%"></div><div class="skeleton"></div></div>';
 
@@ -211,7 +190,7 @@
     };
     script.onerror = function () { fail("Could not reach Google Sheets."); };
     script.src = "https://docs.google.com/spreadsheets/d/" + SHEET_ID + "/gviz/tq?gid=" + GID +
-      "&tqx=out:json;responseHandler:" + cb + "&tq=" + encodeURIComponent(QUERY);
+      "&headers=0&range=" + RANGE + "&tqx=out:json;responseHandler:" + cb;
     document.head.appendChild(script);
   }
 
@@ -220,12 +199,6 @@
     $("body").innerHTML = '<div class="state">Prayer times could not be loaded.<br>' + escapeHtml(msg) +
       '<br><button id="retry">Try again</button></div>';
     $("retry").onclick = load;
-  }
-
-  function escapeHtml(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
-    });
   }
 
   // Convert a sheet cell to minutes after midnight, or null if it is not a time.
@@ -248,28 +221,14 @@
     if (mins !== null) return pad(Math.floor(mins / 60)) + ":" + pad(mins % 60);   // 24-hour HH:MM
     return c.f != null ? c.f : (c.v == null ? "" : String(c.v));
   }
-  function pad(n) { return n < 10 ? "0" + n : "" + n; }
 
-  function parse(table) {
-    labels = table.cols.map(function (c) { return (c.label || "").trim(); });
-    rows = table.rows.map(function (r) {
-      var cells = (r.c || []).map(function (c) { return { text: cellText(c), mins: cellMinutes(c) }; });
-      var nameCell = cells[0];
-      var hasName = nameCell && nameCell.mins === null;
-      var times = cells.slice(hasName ? 1 : 0);
-      var start = null;
-      for (var i = 0; i < times.length; i++) { if (times[i].mins !== null) { start = times[i].mins; break; } }
-      return { name: hasName ? nameCell.text : "", times: times, start: start };
-    }).filter(function (r) { return r.times.some(function (t) { return t.text; }) || r.name; });
-    if (!rows.length) throw new Error("empty");
-
-    // Some sheets store 12-hour times without AM/PM (e.g. "5:45" for Maghrib).
-    // Prayers run in order through the day, so if a time is earlier than the one
-    // above it in the same column, it must be in the afternoon/evening: add 12 hours.
-    var maxCols = Math.max.apply(null, rows.map(function (r) { return r.times.length; }));
+  // Sheets sometimes store 12-hour times without AM/PM (e.g. "5:45" for Maghrib). Prayers run in order
+  // through the day, so a time earlier than the one above it in the same column must be PM.
+  function fixPM(list) {
+    var maxCols = Math.max.apply(null, list.map(function (r) { return r.times.length; }).concat([0]));
     for (var c = 0; c < maxCols; c++) {
       var prev = -1;
-      rows.forEach(function (r) {
+      list.forEach(function (r) {
         var t = r.times[c];
         if (!t || t.mins === null) return;
         if (t.mins < prev && t.mins < 720) {
@@ -279,19 +238,13 @@
         prev = Math.max(prev, t.mins);
       });
     }
-    rows.forEach(function (r) {
-      r.start = null;
-      for (var i = 0; i < r.times.length; i++) { if (r.times[i].mins !== null) { r.start = r.times[i].mins; break; } }
-    });
+  }
 
-    // Jamaat column: the one labelled "jamaat"/"jamat"/"jama'at" if present, otherwise the last time column.
-    var jamLabel = -1;
-    labels.forEach(function (l, i) { if (/jam/i.test(l)) jamLabel = i; });
-    var named = rows.some(function (r) { return r.name; });
-    var jamIdx = jamLabel >= 0 ? jamLabel - (named ? 1 : 0) : -1;
-    rows.forEach(function (r) {
+  function setJamaat(list, jamIdx) {
+    list.forEach(function (r) {
       var t = jamIdx >= 0 ? r.times[jamIdx] : null;
       if (!t || t.mins === null) {
+        t = null;
         for (var i = r.times.length - 1; i >= 0; i--) { if (r.times[i].mins !== null) { t = r.times[i]; break; } }
       }
       r.jam = t ? t.mins : null;
@@ -299,41 +252,90 @@
     });
   }
 
+  function parse(table) {
+    var all = table.rows.map(function (r) {
+      var cells = (r.c || []).map(function (c) { return { text: cellText(c), mins: cellMinutes(c) }; });
+      var name = cells[0] && cells[0].mins === null ? cells[0].text.trim() : "";
+      var times = cells.slice(name || (cells[0] && cells[0].mins === null) ? 1 : 0);
+      return { name: name, times: times };
+    });
+
+    // Optional heading row (text but no times in the time columns) provides the column labels.
+    labels = [];
+    for (var h = 0; h < all.length; h++) {
+      var r = all[h];
+      var hasTime = r.times.some(function (t) { return t.mins !== null; });
+      var hasText = r.times.some(function (t) { return t.text; });
+      if (!hasTime && hasText) { labels = [""].concat(r.times.map(function (t) { return t.text; })); break; }
+    }
+
+    var prayers = all.filter(function (r) { return r.times.some(function (t) { return t.mins !== null; }); });
+    if (!prayers.length) throw new Error("empty");
+
+    // First time a prayer name appears = today; the second time = tomorrow.
+    var seen = {}, tomorrowByName = {};
+    today = []; tmr = [];
+    prayers.forEach(function (r) {
+      var key = r.name.toLowerCase();
+      if (key && !seen[key]) { seen[key] = true; today.push(r); }
+      else if (key && seen[key] && !tomorrowByName[key]) { tomorrowByName[key] = r; }
+      else if (!key) { today.push(r); }
+    });
+    var tomorrowList = today.map(function (r) { return tomorrowByName[r.name.toLowerCase()] || null; });
+
+    // No names in the sheet: assume the first half is today and the second half is tomorrow.
+    if (today.every(function (r) { return !r.name; }) && prayers.length % 2 === 0) {
+      var half = prayers.length / 2;
+      today = prayers.slice(0, half);
+      tomorrowList = prayers.slice(half);
+    }
+
+    fixPM(today);
+    fixPM(tomorrowList.filter(Boolean));
+
+    var jamLabel = -1;
+    labels.forEach(function (l, i) { if (/jam/i.test(l)) jamLabel = i; });
+    var jamIdx = jamLabel > 0 ? jamLabel - 1 : -1;
+    setJamaat(today, jamIdx);
+    setJamaat(tomorrowList.filter(Boolean), jamIdx);
+    tmr = tomorrowList;
+  }
+
   function render() {
-    var colCount = Math.max.apply(null, rows.map(function (r) { return r.times.length; }));
-    var named = rows.some(function (r) { return r.name; });
-    var offset = labels.length - colCount;
-    var headLabels = labels.slice(Math.max(offset, 0));
+    var colCount = Math.max.apply(null, today.map(function (r) { return r.times.length; }));
 
     var html = '<ul class="list" style="--cols:' + colCount + '">';
-    if (headLabels.some(Boolean)) {
-      html += '<li class="head"><span>' + (named ? escapeHtml(labels[0] || "") : "") + "</span>" +
-        headLabels.map(function (l) { return "<span>" + escapeHtml(l) + "</span>"; }).join("") + "</li>";
-    }
-    rows.forEach(function (r, i) {
-      html += '<li class="row" data-i="' + i + '"><span class="name">' + escapeHtml(r.name || "") + "</span>" +
-        r.times.map(function (t) { return "<span>" + escapeHtml(t.text) + "</span>"; }).join("") + "</li>";
+    today.forEach(function (r, i) {
+      html += '<li class="row" data-i="' + i + '"><span class="name">' + escapeHtml(r.name || "") + "</span>";
+      for (var c = 0; c < colCount; c++) html += "<span></span>";
+      html += "</li>";
     });
     html += "</ul>";
     $("body").innerHTML = html;
     $("hero").hidden = false;
+    shown = [];
 
     tick();
     clearInterval(timer);
     timer = setInterval(tick, 1000);
   }
 
+  function countdown(secs) {
+    secs = Math.max(0, Math.round(secs));
+    var h = Math.floor(secs / 3600), m = Math.floor((secs % 3600) / 60), s = secs % 60;
+    return "In <strong>" + (h ? h + "h " + pad(m) + "m" : m + "m " + pad(s) + "s") + "</strong>";
+  }
+
   function tick() {
-    var now = new Date();
-    var TZ = "Europe/London";   // always show UK time, whatever the visitor's device is set to
+    var now = new Date();   // all logic uses UK time, whatever the visitor's device is set to
     var parts = {};
     new Intl.DateTimeFormat("en-GB", { timeZone: TZ, hourCycle: "h23", hour: "numeric", minute: "numeric", second: "numeric" })
       .formatToParts(now).forEach(function (p) { parts[p.type] = +p.value; });
     var nowMins = parts.hour * 60 + parts.minute + parts.second / 60;
 
-    $("dateText").textContent = now.toLocaleDateString("en-GB", { timeZone: TZ, weekday: "long", day: "numeric", month: "long" });
+    $("dateText").textContent = now.toLocaleDateString("en-GB", { timeZone: TZ, weekday: "short", day: "numeric", month: "short" });
     try {
-      // Use the numeric month and our own month names, because some browsers print the wrong month name for this calendar.
+      // Numeric month + our own names: some browsers print the wrong month name for this calendar.
       var hp = {};
       new Intl.DateTimeFormat("en-u-ca-islamic-umalqura-nu-latn", { timeZone: TZ, day: "numeric", month: "numeric", year: "numeric" })
         .formatToParts(now).forEach(function (p) { hp[p.type] = parseInt(p.value, 10); });
@@ -341,61 +343,70 @@
         "Rajab", "Sha\u2019ban", "Ramadan", "Shawwal", "Dhu al-Qi\u2019dah", "Dhu al-Hijjah"];
       var hy = hp.relatedYear || hp.year;
       if (!(hp.month >= 1 && hp.month <= 12) || !(hy > 1300 && hy < 1600)) throw new Error("bad hijri date");
-      $("hijriText").textContent = hp.day + " " + HIJRI_MONTHS[hp.month - 1] + " " + hy + " AH (Umm al-Qura)";
+      $("hijriText").textContent = hp.day + " " + HIJRI_MONTHS[hp.month - 1] + " " + hy + " (Umm al-Qura)";
       $("hijriText").hidden = false;
     } catch (e) { $("hijriText").hidden = true; }
     $("clockText").textContent = now.toLocaleTimeString("en-GB", { timeZone: TZ, hourCycle: "h23", hour: "2-digit", minute: "2-digit" });
 
     var dayKey = now.toLocaleDateString("en-CA", { timeZone: TZ });
-    if (lastDay && lastDay !== dayKey) { lastDay = dayKey; load(); return; }   // new UK day: reload today's and tomorrow's times
+    if (lastDay && lastDay !== dayKey) { lastDay = dayKey; load(); return; }   // new UK day: reload the sheet
     lastDay = dayKey;
 
-    var GRACE = 5; // minutes after jamaat during which the prayer is shown as taking place
+    // Which prayer is taking place now, and which is next?
     var nowIdx = -1, nextIdx = -1;
-    for (var i = 0; i < rows.length; i++) {
-      var j = rows[i].jam;
+    for (var i = 0; i < today.length; i++) {
+      var j = today[i].jam;
       if (j === null) continue;
       if (nowMins >= j && nowMins < j + GRACE) { nowIdx = i; break; }
       if (nowMins < j) { nextIdx = i; break; }
     }
-    var activeIdx = nowIdx !== -1 ? nowIdx : nextIdx;
+    // Everything has finished: the next prayer is tomorrow's first one.
+    var nextTomorrow = -1;
+    if (nowIdx === -1 && nextIdx === -1) {
+      for (var k = 0; k < today.length; k++) { if (tmr[k] && tmr[k].jam !== null) { nextTomorrow = k; break; } }
+    }
 
-    document.querySelectorAll(".row").forEach(function (el, i) {
-      var j = rows[i].jam;
+    // Once a prayer's jamaat (+ grace) has passed, its row shows tomorrow's times.
+    var rowEls = document.querySelectorAll(".row");
+    rowEls.forEach(function (el, i) {
+      var r = today[i];
+      var finished = r.jam !== null && nowMins >= r.jam + GRACE && !!tmr[i];
+      var data = finished ? tmr[i] : r;
+      var key = finished ? "m" : "t";
+      if (shown[i] !== key) {
+        shown[i] = key;
+        var spans = el.querySelectorAll("span:not(.name)");
+        spans.forEach(function (sp, c) { sp.textContent = data.times[c] ? data.times[c].text : ""; });
+        el.classList.toggle("tmrw", finished);
+      }
       el.classList.toggle("now", i === nowIdx);
-      el.classList.toggle("next", i === nextIdx);
-      el.classList.toggle("past", j !== null && (activeIdx === -1 || i < activeIdx));
+      el.classList.toggle("next", i === nextIdx || i === nextTomorrow);
     });
 
     var nameEl = $("heroName"), timeEl = $("heroTime"), countEl = $("heroCount");
     $("hero").classList.toggle("live", nowIdx !== -1);
-
-    if (activeIdx === -1) {
-      if (tomorrow) {
-        nameEl.textContent = "Tomorrow: Fajr jamaat";
-        timeEl.textContent = tomorrow.text;
-        var ts = Math.max(0, Math.round((1440 - nowMins + tomorrow.mins) * 60));
-        var th = Math.floor(ts / 3600), tm = Math.floor((ts % 3600) / 60), tsec = ts % 60;
-        countEl.innerHTML = "In <strong>" + (th ? th + "h " : "") + pad(tm) + "m " + pad(tsec) + "s</strong>";
-      } else {
-        nameEl.textContent = "All jamaats are finished for today";
-        timeEl.textContent = "";
-        countEl.textContent = "";
-      }
-      return;
-    }
-    var r = rows[activeIdx];
-    timeEl.textContent = r.jamText;
+    $("hero").classList.toggle("tmrw", nowIdx === -1 && nextIdx === -1 && nextTomorrow !== -1);
 
     if (nowIdx !== -1) {
-      nameEl.textContent = (r.name || "Prayer") + " jamaat";
+      var cur = today[nowIdx];
+      nameEl.textContent = (cur.name || "Prayer") + " jamaat";
+      timeEl.textContent = cur.jamText;
       countEl.innerHTML = "<strong>Currently taking place</strong>";
-      return;
+    } else if (nextIdx !== -1) {
+      var nx = today[nextIdx];
+      nameEl.textContent = (nx.name || "Next") + " jamaat";
+      timeEl.textContent = nx.jamText;
+      countEl.innerHTML = countdown((nx.jam - nowMins) * 60);
+    } else if (nextTomorrow !== -1) {
+      var tm = tmr[nextTomorrow];
+      nameEl.textContent = (today[nextTomorrow].name || "First prayer") + " jamaat \u00b7 tomorrow";
+      timeEl.textContent = tm.jamText;
+      countEl.innerHTML = countdown((1440 - nowMins + tm.jam) * 60);
+    } else {
+      nameEl.textContent = "All jamaats are finished for today";
+      timeEl.textContent = "";
+      countEl.textContent = "";
     }
-    nameEl.textContent = (r.name || "Next") + " jamaat";
-    var secs = Math.max(0, Math.round((r.jam - nowMins) * 60));
-    var h = Math.floor(secs / 3600), m = Math.floor((secs % 3600) / 60), s = secs % 60;
-    countEl.innerHTML = "In <strong>" + (h ? h + "h " : "") + pad(m) + "m " + pad(s) + "s</strong>";
   }
 
   load();
