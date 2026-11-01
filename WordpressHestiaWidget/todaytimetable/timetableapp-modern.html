@@ -116,6 +116,10 @@
     background: currentColor; margin-right: 8px; animation: pulse 1.4s ease-in-out infinite;
   }
 
+  .note { display: flex; align-items: center; gap: 6px; padding: 0 18px 10px; font-size: 11px; color: rgba(255,255,255,.7); }
+  .note::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #f4d58d; flex: none; }
+  .note[hidden] { display: none; }
+
   /* States */
   .state { padding: 24px 16px; text-align: center; color: rgba(255,255,255,.85); font-size: 15px; line-height: 1.5; }
   .state button {
@@ -310,7 +314,7 @@
       for (var c = 0; c < colCount; c++) html += "<span></span>";
       html += "</li>";
     });
-    html += "</ul>";
+    html += '</ul><div class="note" id="note" hidden>Gold = tomorrow\u2019s times</div>';
     $("body").innerHTML = html;
     $("hero").hidden = false;
     shown = [];
@@ -382,6 +386,10 @@
       el.classList.toggle("now", i === nowIdx);
       el.classList.toggle("next", i === nextIdx || i === nextTomorrow);
     });
+
+    // Explain the gold colour only when the table mixes today's and tomorrow's times.
+    var noteEl = $("note");
+    if (noteEl) noteEl.hidden = !(shown.indexOf("m") !== -1 && shown.indexOf("t") !== -1);
 
     var nameEl = $("heroName"), timeEl = $("heroTime"), countEl = $("heroCount");
     $("hero").classList.toggle("live", nowIdx !== -1);
