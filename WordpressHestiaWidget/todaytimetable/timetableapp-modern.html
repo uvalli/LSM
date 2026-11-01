@@ -333,7 +333,16 @@
 
     $("dateText").textContent = now.toLocaleDateString("en-GB", { timeZone: TZ, weekday: "long", day: "numeric", month: "long" });
     try {
-      $("hijriText").textContent = new Intl.DateTimeFormat("en-GB-u-ca-islamic-umalqura", { timeZone: TZ, day: "numeric", month: "long", year: "numeric" }).format(now) + " (Umm al-Qura)";
+      // Use the numeric month and our own month names, because some browsers print the wrong month name for this calendar.
+      var hp = {};
+      new Intl.DateTimeFormat("en-u-ca-islamic-umalqura-nu-latn", { timeZone: TZ, day: "numeric", month: "numeric", year: "numeric" })
+        .formatToParts(now).forEach(function (p) { hp[p.type] = parseInt(p.value, 10); });
+      var HIJRI_MONTHS = ["Muharram", "Safar", "Rabi\u2019 al-Awwal", "Rabi\u2019 al-Thani", "Jumada al-Awwal", "Jumada al-Thani",
+        "Rajab", "Sha\u2019ban", "Ramadan", "Shawwal", "Dhu al-Qi\u2019dah", "Dhu al-Hijjah"];
+      var hy = hp.relatedYear || hp.year;
+      if (!(hp.month >= 1 && hp.month <= 12) || !(hy > 1300 && hy < 1600)) throw new Error("bad hijri date");
+      $("hijriText").textContent = hp.day + " " + HIJRI_MONTHS[hp.month - 1] + " " + hy + " AH (Umm al-Qura)";
+      $("hijriText").hidden = false;
     } catch (e) { $("hijriText").hidden = true; }
     $("clockText").textContent = now.toLocaleTimeString("en-GB", { timeZone: TZ, hourCycle: "h23", hour: "2-digit", minute: "2-digit" });
 
